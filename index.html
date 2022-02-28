@@ -4,42 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yugi Map</title>
 
-    <script type="text/javascript">
-      function showLocation(position) {
-         var latitude = position.coords.latitude;
-         var longitude = position.coords.longitude;
-         var latlongvalue = position.coords.latitude + ","
-         + position.coords.longitude;
-         var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-         +latlongvalue+"&amp;zoom=14&amp;size=400x300&amp;key=AIzaSyAM4ueq-xMmTbdx0YiUXQmga17FTN4an30";
-         document.getElementById("mapholder").innerHTML =
-         "<img src='"+img_url+"'>";
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <title>Yugi Map</title>
+    <style>
+      #map {
+        height: 180px;
       }
-      function errorHandler(err) {
-         if(err.code == 1) {
-            alert("Error: Access is denied!");
-         } else if( err.code == 2) {
-            alert("Error: Position is unavailable!");
-         }
-      }
-      function getLocation(){
-         if(navigator.geolocation){
-            // timeout at 60000 milliseconds (60 seconds)
-            var options = {timeout:60000};
-            navigator.geolocation.getCurrentPosition
-            (showLocation, errorHandler, options);
-         } else{
-            alert("Sorry, browser does not support geolocation!");
-         }
-      }
-    </script>
+    </style>
   </head>
   <body>
-    <div id="mapholder"></div>
-    <form>
-      <input type="button" onclick="getLocation();" value="Get Location" />
-    </form>
+    <div id="map"></div>
+
+    <script>
+      var map = L.map("map").setView([51.505, -0.09], 13);
+
+      const attribution =
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+
+      const tileUrl = "https://{s}.title.openstreetmap.org/{z}/{x}/{y}.png";
+      const tiles = L.tileLayer(tileUrl, { attribution });
+
+      tiles.addTo(map);
+    </script>
   </body>
 </html>
