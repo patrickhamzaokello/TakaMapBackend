@@ -26,7 +26,7 @@ class InfrastructureFunction
 
         if ($this->page) {
             $this->page = floatval($this->page);
-            $no_of_records_per_page = 10;
+            $no_of_records_per_page = 100;
             $offset = ($this->page - 1) * $no_of_records_per_page;
 
             $sql = "SELECT COUNT(*) as count FROM " . $this->itemsTable . " limit 1";
