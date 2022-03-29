@@ -16,7 +16,7 @@ const marker = L.marker([2.239878798827563, 32.89395403994614]).addTo(mymap);
 
 //Add popup message
 let template = `
-<h1>Sedrick & Steve </h1>
+<h1>Yugi Map Demo</h1>
 
 <div style="text-align:center">
 <h2>This location may change based on the tracker device</h2>
