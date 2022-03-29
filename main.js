@@ -1,6 +1,6 @@
 const apiKey = "pk.eyJ1IjoicGthc2VtZXIiLCJhIjoiY2wxYzNwMnRrMDN2czNkbzBnd2NtM3B5ZSJ9.anQZtZnER9oJ2rodYqx-XQ";
 
-const mymap = L.map('map').setView([2.2398967680870316, 32.89527797106312], 13);
+const mymap = L.map('map').setView([2.2398967680870316, 32.89527797106312], 16);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
@@ -26,6 +26,6 @@ marker.bindPopup(template);
 
 //Add circle
 const circle = L.circle([2.239878798827563, 32.89395403994614], {
-    radius: 500,
+    radius: 80,
     color: 'green'
 }).addTo(mymap)
