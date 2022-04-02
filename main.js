@@ -1,6 +1,6 @@
 const apiKey = "pk.eyJ1IjoicGthc2VtZXIiLCJhIjoiY2wxYzNwMnRrMDN2czNkbzBnd2NtM3B5ZSJ9.anQZtZnER9oJ2rodYqx-XQ";
 
-const mymap = L.map('map').setView([2.7720190833020135, 32.30025580020922], 13);
+const mymap = L.map('map').setView([2.7720190833020135, 32.30025580020922], 14);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
