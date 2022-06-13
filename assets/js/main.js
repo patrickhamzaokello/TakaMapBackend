@@ -27,6 +27,7 @@ async function getInfrastructure() {
     const { total_results, infrastructure } = data;
 
 
+
     infrastructure.forEach(element => {
         const { id, aim, description, longitude, latitude, type } = element;
         //adding Marker
@@ -35,10 +36,10 @@ async function getInfrastructure() {
         //Add popup message
         let template = `
             
-            <div class="infras_card" style="border-radius: 20px;background-color:#228765 ; padding: 2em; color: #fff; font-size: 15px;">
+            <div class="infras_card" style="border-radius: 20px;background-color:#228765 ; padding: 1em; color: #fff; font-size: 15px;">
             <h1 style="color: #F6FFEE; font-size: 22px;">${type}</h1>
             <p style="margin: 0;color: #CDEDCB;">${description}</p>
-            <p style="margin: 0;color:#36CC7C ;margin-top: 1em;"><span style="color: #CDEDCB;">Aim</span>${aim}</p>
+            <p style="margin: 0;color:#36CC7C ;margin-top: 1em;"><span style="color: #CDEDCB;">Aim </span>${aim}</p>
             <p style="margin: 0;"><span style="color: #CDEDCB;">Contact</span> 0787250196</p>
             <p style="margin: 0;"><span style="color: #CDEDCB;">Install Date</span> 8th Jun 2022</p>
             <p style=" margin: 0; color: #D9D055; margin-top: 1em; font-size: 12px;">This location may change based on the tracker device</p>
@@ -77,6 +78,7 @@ ValueA: "Gulu",
 ValueB: "Lira",
 ValueC: "Apac",
 };
+
 
 var select = document.getElementById("example-select");
 for (index in example_array) {

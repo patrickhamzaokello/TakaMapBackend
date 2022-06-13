@@ -580,6 +580,7 @@ body.dark .home .text {
   background: none;
   outline: none;
   color: var(--text-color);
+  cursor: pointer;
 }
 
 .main-nav ul {
