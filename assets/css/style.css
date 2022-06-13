@@ -15,6 +15,7 @@
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
   --text-color: #707070;
+  --form-control-disabled: #959495;
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;
@@ -217,10 +218,6 @@ body.dark .sidebar header .toggle {
           transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu {
-  margin-top: 40px;
-}
-
 .sidebar li.search-box {
   border-radius: 6px;
   background-color: var(--primary-color-light);
@@ -321,6 +318,10 @@ body.dark .mode .sun-moon i.sun {
 
 body.dark .mode .sun-moon i.moon {
   opacity: 0;
+}
+
+.menu-links {
+  margin: 2em 0;
 }
 
 .menu-bar .bottom-content .toggle-switch {
@@ -443,7 +444,7 @@ body.dark .home .text {
 }
 
 .main-nav .camp_logo a {
-  color: #D6F299;
+  color: #d6f299;
   font-size: 20px;
   font-weight: 700;
   font-family: "Montserrat";
@@ -566,6 +567,112 @@ body.dark .home .text {
     visibility: initial;
     background-color: #fff;
   }
+}
+
+.form-control {
+  font-size: 17px;
+  line-height: 1.1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1em auto;
+      grid-template-columns: 1em auto;
+  gap: 0.5em;
+  color: var(--text-color);
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  -webkit-transform: translateY(-0.075em);
+          transform: translateY(-0.075em);
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+input[type="checkbox"] {
+  /* ...existing styles */
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms transform ease-in-out;
+  transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+  -webkit-box-shadow: inset 1em 1em var(--primary-color);
+          box-shadow: inset 1em 1em var(--primary-color);
+}
+
+input[type="checkbox"] {
+  /* ...existing styles */
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms transform ease-in-out;
+  transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+  -webkit-box-shadow: inset 1em 1em var(--primary-color);
+          box-shadow: inset 1em 1em var(--primary-color);
+}
+
+input[type="checkbox"]:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+input[type="checkbox"]::before {
+  /* ...existing styles */
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]::before {
+  /* ...existing styles */
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
 }
 
 .cityselect {
