@@ -758,12 +758,13 @@ input[type="checkbox"]:disabled {
 }
 
 .main-nav.open {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #035419;
 }
 
 .main-nav.open .tuggle-content {
-  -webkit-box-shadow: 0px 5px 12px -8px #000;
-          box-shadow: 0px 5px 12px -8px #000;
+  -webkit-box-shadow: 0px 5px 12px -8px #035419;
+          box-shadow: 0px 5px 12px -8px #035419;
+  z-index: 10000;
 }
 
 .main-nav.active {
@@ -808,7 +809,7 @@ input[type="checkbox"]:disabled {
     border-bottom: none;
   }
   .main-nav.open .tuggle-content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #035419;
   }
   .main-nav.active .tuggle-content {
     background-color: #fff;
