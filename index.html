@@ -1,58 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+  
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  
     <title>Yugi maps</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+  </head>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <body>
+    <nav class="main-nav">
+      <div class="nav-content">
+        <ul class="left-content">
+          <li class="nav-item">
+            <a class="nav-link logo" href="#header"></a>
+          </li>
+          <li class="nav-item tuggle-btn">
+            <div class="tuggle-btn-content">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </li>
+        </ul>
+        <ul class="right-content">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link registration" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tuggle-content">
+        <ul class="left-content">
+          <li class="nav-item camp_logo">
+            <a class="nav-link" href="/">Yugi Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#some-content-1">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#some-content-2">Pickup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#some-content-3">Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#some-content-4">Connect</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        body {
-            background-color: #015418;
-            font-family: 'Montserrat', sans-serif;
-            height: 100vh;
+    <div class="sidebar">
+      <header>
 
-        }
+        <div class="image-text">
+        
+          <div class="text logo-text">
+            <span class="name">Infrastructure</span>
+            <span class="profession">Select type to filter</span>
+          </div>
+        </div>
+  
+      
+      </header>
 
+      <div class="menu-bar">
+        <div class="menu">
 
-        #map {
-            width: 100%;
-            height: 100%;
-            margin: 0 auto;
-        }
-
-        .heading {
-            color: #00963c;
-            padding: 2em;
-        }
-
-        h1 {
-            color: #D6F299;
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <div class="heading">
-        <h1 class="title">Yugi Map</h1>
-        <p>Know where to take your trash</p>
+          <li class="search-box">
+            <i class='bx bx-search icon'></i>
+            <input type="text" placeholder="Search...">
+          </li>
+  
+          <ul class="menu-links">
+            <li class="nav-link ">
+              <a href="../index">
+                <i class='bx bx-home-alt icon'></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+  
+            <li class="nav-link">
+              <a href="cases">
+                <i class='bx bx-bar-chart-alt-2 icon'></i>
+                <span class="text nav-text">Cases</span>
+              </a>
+            </li>
+  
+            <li class="nav-link active">
+              <a href="appointments">
+                <i class='bx bx-bell icon'></i>
+                <span class="text nav-text">Appointments</span>
+              </a>
+            </li>
+  
+            <li class="nav-link">
+              <a href="#">
+                <i class='bx bx-pie-chart-alt icon'></i>
+                <span class="text nav-text">Analytics</span>
+              </a>
+            </li>
+  
+            <li class="nav-link">
+              <a href="#">
+                <i class='bx bx-heart icon'></i>
+                <span class="text nav-text">Likes</span>
+              </a>
+            </li>
+  
+            <li class="nav-link">
+              <a href="#">
+                <i class='bx bx-wallet icon'></i>
+                <span class="text nav-text">Wallets</span>
+              </a>
+            </li>
+  
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="../logout.php">
+              <i class='bx bx-log-out icon'></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+  
+          <li class="mode">
+            <div class="sun-moon">
+              <i class='bx bx-moon icon moon'></i>
+              <i class='bx bx-sun icon sun'></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+  
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+  
+        </div>
+      </div>
     </div>
 
-    <div id="map"></div>
+    <section class="home">
+      <div id="map"></div>
+    </section>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="main.js"></script>
-</body>
+    <script src="assets/js/main.js"></script>
 
+    
+  <script>
+    const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+    searchBtn.addEventListener("click", () => {
+      sidebar.classList.remove("close");
+    })
+
+    modeSwitch.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+      } else {
+        modeText.innerText = "Dark mode";
+
+      }
+    });
+  </script>
+  </body>
 </html>
