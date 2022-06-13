@@ -34,12 +34,15 @@ async function getInfrastructure() {
 
         //Add popup message
         let template = `
-            <h1 style="text-align:center; text-transform: capitalize; color: #015418;">${type}</h1>
-            <div style="text-align:center">
-            <h2>${description}</h2>
-            <p>${aim}</p>
-            <p>This location may change based on the tracker device </p>
-            </div>
+            
+            <div class="infras_card" style="border-radius: 20px;background-color:#228765 ; padding: 2em; color: #fff; font-size: 15px;">
+            <h1 style="color: #F6FFEE; font-size: 22px;"></h1>
+            <p style="margin: 0;color: #CDEDCB;">Pece Prison Primary School</p>
+            <p style="margin: 0;color:#36CC7C ;margin-top: 1em;"><span style="color: #CDEDCB;">Aim</span> school</p>
+            <p style="margin: 0;"><span style="color: #CDEDCB;">Contact</span> 0787250196</p>
+            <p style="margin: 0;"><span style="color: #CDEDCB;">Install Date</span> 8th Jun 2022</p>
+            <p style=" margin: 0; color: #D9D055; margin-top: 1em; font-size: 12px;">This location may change based on the tracker device</p>
+          </div>
             `
         marker.bindPopup(template);
     });
@@ -49,3 +52,36 @@ async function getInfrastructure() {
 
 getInfrastructure();
 
+const body = document.querySelector("body"),
+sidebar = body.querySelector("nav"),
+searchBtn = body.querySelector(".search-box"),
+modeSwitch = body.querySelector(".toggle-switch"),
+modeText = body.querySelector(".mode-text");
+
+searchBtn.addEventListener("click", () => {
+sidebar.classList.remove("close");
+});
+
+modeSwitch.addEventListener("click", () => {
+body.classList.toggle("dark");
+
+if (body.classList.contains("dark")) {
+  modeText.innerText = "Light mode";
+} else {
+  modeText.innerText = "Dark mode";
+}
+});
+
+var example_array = {
+ValueA: "Gulu",
+ValueB: "Lira",
+ValueC: "Apac",
+};
+
+var select = document.getElementById("example-select");
+for (index in example_array) {
+select.options[select.options.length] = new Option(
+  example_array[index],
+  index
+);
+}

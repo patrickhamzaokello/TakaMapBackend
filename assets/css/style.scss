@@ -478,18 +478,21 @@ $nav-tuggle-btn-size: (
 }
 
 // USERS styles page and navigation
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-body {
-  * {
-    box-sizing: border-box;
+
+.cityselect {
+  border: 1px solid #e5e5e5;
+  padding: 10px;
+
+  select {
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    background: none;
+    outline: none;
+    color: var(--text-color);
   }
-  margin: 0;
-  padding: 0;
 }
+
 .main-nav {
   ul {
     text-transform: uppercase;
