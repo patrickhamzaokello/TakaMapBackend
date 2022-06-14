@@ -22,6 +22,7 @@ const circle = L.circle([2.7720190833020135, 32.30025580020922], {
 
 const url = "https://yugimap.com/mobile/api/v1/infrastructure/read.php?page=1";
 var data = [];
+var layerGroup = L.layerGroup().addTo(mymap);
 
 async function getInfrastructure() {
   const response = await fetch(url);
@@ -31,8 +32,9 @@ async function getInfrastructure() {
 
   infrastructure.forEach((element) => {
     const { id, aim, description, longitude, latitude, type } = element;
-    //adding Marker
-    const marker = L.marker([latitude, longitude]).addTo(mymap);
+
+    // create markers
+    const marker = L.marker([latitude, longitude]).addTo(layerGroup);
 
     //Add popup message
     let template = `
@@ -74,7 +76,12 @@ function grabCheckboxValues() {
 }
 
 function filterCards() {
-  wrapper.innerHTML = "";
+  // mymap.eachLayer((layer) => {
+  //   layer.remove();
+  // });
+  // remove all the markers in one go
+  layerGroup.clearLayers();
+
   checkboxValues = grabCheckboxValues();
 
   const { total_results, infrastructure } = data;
@@ -85,8 +92,8 @@ function filterCards() {
     let isMatch = checkboxValues.includes(type);
     console.log(isMatch);
     if (isMatch) {
-      //adding Marker
-      const marker = L.marker([latitude, longitude]).addTo(mymap);
+      // create markers
+      const marker = L.marker([latitude, longitude]).addTo(layerGroup);
 
       //Add popup message
       let template = `
