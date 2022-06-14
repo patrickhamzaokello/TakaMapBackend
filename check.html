@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      "use strict";
+      window.addEventListener("load", onLoaded, false);
+
+      function onLoaded(evt) {
+        populatePage(dummyData);
+      }
+
+      var dummyData = {
+        rows: [
+          { name: "Have problem with programming" },
+          { name: "Ask question at SO" },
+          { name: "Read answers" },
+          { name: "Make an answer as correct if any are" },
+          { name: "Profit $$$$" },
+        ],
+      };
+
+      function populatePage(data) {
+        data.rows.forEach(eachItemFunc);
+
+        function eachItemFunc(item, index, collection) {
+          var tgtItem = document.getElementById("itemTemplate");
+          var newCopy = tgtItem.content.cloneNode(true);
+          var nameTgtElem = newCopy.querySelector("#rowName");
+          nameTgtElem.textContent = item.name;
+          document.getElementById("checkboxx").appendChild(newCopy);
+        }
+      }
+    </script>
+      <template id="itemTemplate">
+        <div class="CheckBox">
+          <label><span id="rowName"></span><input type="checkbox" /></label>
+        </div>
+      </template>
+  </head>
+  <body>
+    <div id="checkboxx">
+    </div>
+
+  </body>
+</html>
