@@ -166,8 +166,6 @@ modeSwitch.addEventListener("click", () => {
 
 var example_array = {
   ValueA: "Gulu",
-  ValueB: "Lira",
-  ValueC: "Apac",
 };
 
 var select = document.getElementById("example-select");
