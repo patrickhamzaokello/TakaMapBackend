@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mypassword = mysqli_real_escape_string($con, $_POST['password']);
             $encryptedpw = md5($mypassword);
 
-            $statement = $con->prepare('SELECT * FROM tblcustomer WHERE  customer_email=? AND customer_password =? AND userRole = "2" limit 1');
+            $statement = $con->prepare('SELECT * FROM users WHERE  Email=? AND Password =? AND Role = "2" limit 1');
             $statement->bind_param('ss', $myuseremail, $encryptedpw);
             if ($statement->execute()) {
                 $statement->store_result();
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- <img class="zodongologinlogo" src="pages/assets/zodongo_logo.png" alt=""> -->
                         <p class="logintext">Admin Login</p>
 
-                        <p class="newtopwf">Zodongo Foods</p>
+                        <p class="newtopwf">Yugi Map</p>
                     </div>
 
                     <form action="" method="post">

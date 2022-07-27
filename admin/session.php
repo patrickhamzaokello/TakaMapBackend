@@ -6,13 +6,13 @@ if (!isset($_SESSION['login_user'])) {
 } else {
     $user_check = $_SESSION['login_user'];
 
-    $ses_sql = mysqli_query($con, "select customer_username from tblcustomer where customer_email = '$user_check' ");
+    $ses_sql = mysqli_query($con, "select username from users where Email = '$user_check' ");
 
     $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 
     if ($row) {
-        $login_session = $row['customer_username'];
+        $login_session = $row['username'];
     } else {
-        $login_session = "Null User";
+       return;
     }
 }
