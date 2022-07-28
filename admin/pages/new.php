@@ -106,6 +106,10 @@ require('../session.php');
                             <h6 class="sectionlable">Add New Infrastructure</h6>
                         </div>
 
+                        <div class="sponsormessagediv">
+
+                        </div>
+
                         <form class="saveinfrastructure" action="" method="post">
                             <label for="aimID" class="labeltext">Aim</label>
                             <input id="aimID" type="text" name="aim" placeholder="Infrastructure Aim" required />
@@ -117,9 +121,20 @@ require('../session.php');
                             <input id="latitudeID" type="text" name="Latitude" placeholder="Infrastructure Latitude" required />
                             <label for="descriptionID" class="labeltext">Description</label>
                             <textarea id="descriptionID" name="Description" placeholder="Infrastructure Description" required rows="8"></textarea>
+                            <p style="display: block" id="error"></p>
                             <button class="inputsubmit" type="submit" value="Save">Save Infrastructure</button>
                         </form>
 
+                    </div>
+
+                    <!--        loader-->
+                    <div class="loaderdiv">
+                        <div class="loader-container">
+                            <div class="lds-ripple">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -148,6 +163,8 @@ require('../session.php');
             sidebar.classList.remove("close");
         })
     </script>
+
+    <script src="../js/addInsfrastructure.js"></script>
 
 
 </body>
