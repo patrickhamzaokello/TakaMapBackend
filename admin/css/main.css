@@ -144,6 +144,48 @@ header nav .useraccount:hover {
   color: #fff;
 }
 
+.saveinfrastructure .labeltext {
+  color: #30805e;
+}
+
+.saveinfrastructure input, .saveinfrastructure textarea {
+  display: block;
+  width: 100%;
+  color: #000000 !important;
+  background: #ebebeb !important;
+  border: none;
+  border: 1px solid #ebebeb;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 18px 20px;
+  margin: 5px 0;
+  margin-bottom: 1.5em;
+}
+
+.saveinfrastructure .inputsubmit {
+  padding: 18px 74px;
+  /* width: 100%; */
+  background: #02A676;
+  border: 1px solid #02A676;
+  color: white;
+  outline: none;
+  margin-top: 1em;
+  font-size: 20px;
+  float: right;
+}
+
+.saveinfrastructure .inputcancel {
+  padding: 18px 74px;
+  /* width: 100%; */
+  background: #d8fff3;
+  border: 1px solid #d8fff3;
+  color: #02A676;
+  outline: none;
+  font-size: 20px;
+  float: right;
+  margin: 1em;
+}
+
 /* Google Font Import - Poppins */
 * {
   margin: 0;
@@ -157,7 +199,7 @@ header nav .useraccount:hover {
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
   --sidebar-color: #fff;
-  --primary-color: #695cfe;
+  --primary-color: #518866;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
   --text-color: #707070;
@@ -709,7 +751,7 @@ body.dark .home .text {
 
 .mainpanel .elements .activities .childrencontainer .product-card .casedescription h1 {
   font-size: 15px;
-  color: #1845b8;
+  color: #3cd374;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   /* number of lines to show */
@@ -798,9 +840,9 @@ body.dark .home .text {
           box-shadow: none !important;
   border: 1px solid #e5e5e5 !important;
   margin-top: 1.2em !important;
-  background: #1845b8 !important;
+  background: #3cd374 !important;
   color: #fff !important;
-  border: 1px solid #1845b8 !important;
+  border: 1px solid #3cd374 !important;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   font-size: 12px;
@@ -808,11 +850,11 @@ body.dark .home .text {
 }
 
 .mainpanel .elements .activities .childrencontainer .product-card .sponsorbutton:hover {
-  background: white !important;
-  color: #1845b8 !important;
+  background: #e8cc15 !important;
+  color: #000 !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
-  border: 1px solid #1845b8 !important;
+  border: 1px solid #e8cc15 !important;
 }
 
 .mainpanel .elements .activities .menuitemscontatiner {

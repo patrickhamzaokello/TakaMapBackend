@@ -6,7 +6,6 @@ include("config.php");
 <html lang="en">
 
 <head>
-    <title>Zodongo Foods Admin</title>
     <meta charset="utf-8">
 
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
@@ -16,6 +15,7 @@ include("config.php");
     <link rel="stylesheet" href="loginassets/stylesheet/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="loginassets/javascript/main.js"></script>
+    <title>Yugi Map</title>
 
 </head>
 

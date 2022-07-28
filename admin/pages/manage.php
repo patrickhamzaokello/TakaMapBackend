@@ -1,14 +1,14 @@
 <?php
 // keep the same order
-require("config.php");
+require("../config.php");
 $db = new Database();
 $con = $db->getConnString();
 
-require('session.php');
+require('../session.php');
 
-require('queries/statsquery.php');
-require('queries/order_new_query.php');
-require "queries/classes/Infrastructure.php";
+require('../queries/statsquery.php');
+require('../queries/order_new_query.php');
+require "../queries/classes/Infrastructure.php";
 
 
 ?>
@@ -24,7 +24,7 @@ require "queries/classes/Infrastructure.php";
     <link rel="icon" type="image/x-icon" href="pages/assets/z_favicon.png">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -62,22 +62,22 @@ require "queries/classes/Infrastructure.php";
             </li>
 
             <ul class="menu-links">
-                <li class="nav-link active">
-                    <a href="index">
+                <li class="nav-link ">
+                    <a href="../index">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                    <a href="pages/new">
+                    <a href="new">
                         <i class='bx bx-bar-chart-alt-2 icon'></i>
                         <span class="text nav-text">Add New</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
-                    <a href="pages/manage">
+                <li class="nav-link active">
+                    <a href="manage">
                         <i class='bx bx-bell icon'></i>
                         <span class="text nav-text">Manage</span>
                     </a>
@@ -88,7 +88,7 @@ require "queries/classes/Infrastructure.php";
 
         <div class="bottom-content">
             <li class="">
-                <a href="logout.php">
+                <a href="../logout.php">
                     <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">Logout</span>
                 </a>
@@ -104,33 +104,8 @@ require "queries/classes/Infrastructure.php";
     <div class="mainpanel">
         <div class="elements">
             <div class="activities">
-                <div class="sectionheading">
-                    <h3 class="sectionlable">Dashboard</h3>
-                    <h6 class="sectionlable">Summary</h6>
-                </div>
-                <div class="statistics">
-                    <div class="card" style="background:#FFAA00">
-                        <div class="illustration">
-                            <img src="images/fontisto_shopping-basket.svg" alt=""/>
-                        </div>
-                        <div class="stats">
-                            <p class="label" style="color: #fff">Active</p>
-                            <p class="number" style="color: #fff"><?= $active_ins ?></p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="illustration">
-                            <img src="images/bx_category.svg" alt=""/>
-                        </div>
-                        <div class="stats">
-                            <p class="label">Not Active</p>
-                            <p class="number"><?= $not_active_ins ?></p>
-                        </div>
-
-                    </div>
-
-                </div>
+               
+                
 
                 <div class="sectionheading">
                     <h3 class="sectionlable">Infrastructures</h3>
