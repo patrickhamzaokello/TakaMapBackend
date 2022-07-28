@@ -109,6 +109,15 @@ require "queries/classes/Infrastructure.php";
                     <h6 class="sectionlable">Summary</h6>
                 </div>
                 <div class="statistics">
+                    <div class="card" style="background: #ff0062; color: #fff;">
+                        <div class="illustration">
+                            <img src="images/fluent_data-treemap-20-filled.svg" alt=""/>
+                        </div>
+                        <div class="stats">
+                            <a href="../index.html"><p class="label" style="color: #fff">View Map</p></a>
+                        </div>
+
+                    </div>
                     <div class="card" style="background:#FFAA00">
                         <div class="illustration">
                             <img src="images/fontisto_shopping-basket.svg" alt=""/>
@@ -129,6 +138,8 @@ require "queries/classes/Infrastructure.php";
                         </div>
 
                     </div>
+
+
 
                 </div>
 
