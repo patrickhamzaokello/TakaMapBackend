@@ -1,10 +1,10 @@
 <?php
-$orderNew = array();
+$infrastructure = array();
 
-$order_new = mysqli_query($con, "SELECT order_id FROM tblorder WHERE  order_status = 1 ORDER BY `tblorder`.`order_date` DESC ");
+$infrastructure_new = mysqli_query($con, "SELECT id FROM infrastructure WHERE  status = 1 ORDER BY `infrastructure`.`InstallDate` DESC");
 
-while ($row = mysqli_fetch_array($order_new)) {
+while ($row = mysqli_fetch_array($infrastructure_new)) {
 
-    array_push($orderNew, $row['order_id']);
+    array_push($infrastructure, $row['id']);
 
 }
