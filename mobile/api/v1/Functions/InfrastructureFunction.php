@@ -4,11 +4,6 @@ class InfrastructureFunction
 
     private $itemsTable = "infrastructure";
     public $id;
-    public $aim;
-    public $description;
-    public $longitude;
-    public $latitude;
-    public $type;
     private $conn;
     public $page;
 
@@ -48,22 +43,6 @@ class InfrastructureFunction
             $stmt->bind_result($this->id);
 
             $ins_id =array();
-
-//            while ($stmt->fetch()) {
-//
-//                $temp = array();
-//
-//                $type = new InfrastructureTypes($this->conn,$this->type);
-//
-//                $temp['id'] = $this->id;
-//                $temp['aim'] = $this->aim;
-//                $temp['description'] = $this->description;
-//                $temp['longitude'] = $this->longitude;
-//                $temp['latitude'] = $this->latitude;
-//                $temp['type'] = $type->getName();
-//
-//                array_push($itemRecords["infrastructure"], $temp);
-//            }
 
             while ($stmt->fetch()){
                 array_push($ins_id, $this->id);
