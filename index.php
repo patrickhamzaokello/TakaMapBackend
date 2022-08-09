@@ -5,7 +5,7 @@ $db = new Database();
 $con = $db->getConnString();
 
 
-$sql = "SELECT * FROM `infrastructuretypes`";
+$sql = "SELECT * FROM `infrastructuretypes` ORDER BY `infrastructuretypes`.`name` ASC";
 $all_categories = mysqli_query($con, $sql);
 
 

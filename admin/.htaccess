@@ -2,6 +2,7 @@ RewriteEngine On    # Turn on the rewriting engine
 RewriteRule ^login$ login.php [NC,L]
 RewriteRule ^index$ index.php [NC,L]
 RewriteRule ^pages/new$ pages/new.php [NC,L]
+RewriteRule ^pages/newType$ pages/newType.php [NC,L]
 RewriteRule ^pages/manage$ pages/manage.php [NC,L]
 RewriteRule ^pages/infrastructure/([0-9_-]*)$  pages/infrastructure.php?id=$1 [NC,L]
 RewriteRule ^logout$ logout.php [NC,L]

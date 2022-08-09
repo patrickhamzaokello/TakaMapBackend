@@ -72,14 +72,21 @@ require "../queries/classes/Infrastructure.php";
 
                 <li class="nav-link">
                     <a href="new">
-                        <i class='bx bx-bar-chart-alt-2 icon'></i>
-                        <span class="text nav-text">Add New</span>
+                        <i class='bx bx-trash-alt icon'></i>
+                        <span class="text nav-text">Add Infrastructure</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="newType">
+                        <i class='bx bx-bell  icon'></i>
+                        <span class="text nav-text">New Type</span>
                     </a>
                 </li>
 
                 <li class="nav-link active">
                     <a href="manage">
-                        <i class='bx bx-bell icon'></i>
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
                         <span class="text nav-text">Manage</span>
                     </a>
                 </li>

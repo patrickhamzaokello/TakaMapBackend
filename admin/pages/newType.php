@@ -6,9 +6,6 @@ $con = $db->getConnString();
 
 require('../session.php');
 
-$sql = "SELECT * FROM `infrastructuretypes` ORDER BY `infrastructuretypes`.`name` ASC";
-$all_categories = mysqli_query($con,$sql);
-
 
 ?>
 
@@ -67,14 +64,14 @@ $all_categories = mysqli_query($con,$sql);
                         </a>
                     </li>
 
-                    <li class="nav-link active">
+                    <li class="nav-link">
                         <a href="new">
                             <i class='bx bx-trash-alt icon'></i>
                             <span class="text nav-text">Add Infrastructure</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    <li class="nav-link active">
                         <a href="newType">
                             <i class='bx bx-bell  icon'></i>
                             <span class="text nav-text">New Type</span>
@@ -112,7 +109,7 @@ $all_categories = mysqli_query($con,$sql);
 
                     <div class="container" style="padding: 0 20%">
                         <div class="sectionheading">
-                            <h3 class="sectionlable">New Infrastructure</h3>
+                            <h3 class="sectionlable">New Type</h3>
                             <h6 class="sectionlable">Add New Infrastructure</h6>
                         </div>
 
@@ -121,36 +118,8 @@ $all_categories = mysqli_query($con,$sql);
                         </div>
 
                         <form class="saveinfrastructure" action="" method="post">
-                            <label for="aimID" class="labeltext">Aim</label>
-                            <input id="aimID" type="text" name="aim" placeholder="Infrastructure Aim" required />
                             <label for="typeID" class="labeltext">Type</label>
-                            <select id="typeID"  name="Type">
-                                <option value="0">Choose Type</option>
-                                <?php
-                                // use a while loop to fetch data
-                                // from the $all_categories variable
-                                // and individually display as an option
-                                while ($category = mysqli_fetch_array(
-                                    $all_categories,MYSQLI_ASSOC)):;
-                                    ?>
-                                    <option value="<?php echo $category["id"];
-                                    // The value we usually set is the primary key
-                                    ?>">
-                                        <?php echo $category["name"];
-                                        // To show the category name to the user
-                                        ?>
-                                    </option>
-                                <?php
-                                endwhile;
-                                // While loop must be terminated
-                                ?>
-                            </select>
-                            <label for="longitudeID" class="labeltext">Longitude</label>
-                            <input id="longitudeID" type="text" name="Longitude" placeholder="Infrastructure Longitude" required />
-                            <label for="latitudeID" class="labeltext">Latitude</label>
-                            <input id="latitudeID" type="text" name="Latitude" placeholder="Infrastructure Latitude" required />
-                            <label for="descriptionID" class="labeltext">Description</label>
-                            <textarea id="descriptionID" name="Description" placeholder="Infrastructure Description" required rows="8"></textarea>
+                            <input id="typeID" type="text" name="type" placeholder="Infrastructure Type" required />
                             <p style="display: block" id="error"></p>
                             <button class="inputsubmit" type="submit" value="Save">Save Infrastructure</button>
                         </form>
@@ -194,7 +163,7 @@ $all_categories = mysqli_query($con,$sql);
         })
     </script>
 
-    <script src="../js/addInsfrastructure.js"></script>
+    <script src="../js/addInsfrastructureType.js"></script>
 
 
 </body>
