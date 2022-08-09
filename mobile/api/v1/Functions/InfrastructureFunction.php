@@ -43,24 +43,48 @@ class InfrastructureFunction
             $itemRecords["total_results"] = $total_rows;
 
 
-            $stmt = $this->conn->prepare("SELECT `id`, `aim`, `description`, `longitude`, `latitude`, `type` FROM " . $this->itemsTable . " Limit $offset, $no_of_records_per_page ");
+            $stmt = $this->conn->prepare("SELECT `id` FROM " . $this->itemsTable . " Limit $offset, $no_of_records_per_page ");
             $stmt->execute();
-            $stmt->bind_result($this->id, $this->aim, $this->description, $this->longitude, $this->latitude, $this->type);
+            $stmt->bind_result($this->id);
 
+            $ins_id =array();
 
-            while ($stmt->fetch()) {
+//            while ($stmt->fetch()) {
+//
+//                $temp = array();
+//
+//                $type = new InfrastructureTypes($this->conn,$this->type);
+//
+//                $temp['id'] = $this->id;
+//                $temp['aim'] = $this->aim;
+//                $temp['description'] = $this->description;
+//                $temp['longitude'] = $this->longitude;
+//                $temp['latitude'] = $this->latitude;
+//                $temp['type'] = $type->getName();
+//
+//                array_push($itemRecords["infrastructure"], $temp);
+//            }
 
+            while ($stmt->fetch()){
+                array_push($ins_id, $this->id);
+            }
+            foreach ($ins_id as $id){
                 $temp = array();
 
-                $temp['id'] = $this->id;
-                $temp['aim'] = $this->aim;
-                $temp['description'] = $this->description;
-                $temp['longitude'] = $this->longitude;
-                $temp['latitude'] = $this->latitude;
-                $temp['type'] = $this->type;
 
+
+                $type = new Infrastructure($this->conn,$id);
+
+                $temp['id'] = $type->getId();
+                $temp['aim'] = $type->getAim();
+                $temp['description'] = $type->getDescription();
+                $temp['longitude'] = $type->getLongitude();
+                $temp['latitude'] = $type->getLatitude();
+                $temp['type'] = $type->getType();
+//
                 array_push($itemRecords["infrastructure"], $temp);
             }
+
             return $itemRecords;
         } else {
             return "No Record";

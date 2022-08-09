@@ -3,6 +3,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include_once '../../../../admin/config.php';
+include_once '../Classes/InfrastructureTypes.php';
+include_once '../Classes/Infrastructure.php';
 include_once '../Functions/InfrastructureFunction.php';
 
 $database = new Database();

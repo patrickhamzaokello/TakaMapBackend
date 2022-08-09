@@ -1,86 +1,151 @@
 <?php
-class MenuTypeClass
+
+class Infrastructure
 {
+    private $TABLE_NAME = "infrastructure";
+    private $con;
+    private $id;
+    private $aim;
+    private $description;
+    private $longitude;
+    private $latitude;
+    private $type;
+    private $InstallDate;
+    private $Contact;
+    private $status;
 
-    private $itemsTable = "infrastructure";
-    public $id;
-    public $aim;
-    public $description;
-    public $longitude;
-    public $latitude;
-    public $type;
-    private $conn;
-
-
-
+    /**
+     * @param $con
+     * @param $id
+     */
     public function __construct($con, $id)
     {
-        $this->conn = $con;
+        $this->con = $con;
         $this->id = $id;
 
-        $stmt = $this->conn->prepare("SELECT `id`, `aim`, `description`, `longitude`, `latitude`, `type` FROM " . $this->itemsTable . " WHERE id = ?");
-        $stmt->bind_param("i", $this->id);
-        $stmt->execute();
-        $stmt->bind_result($this->id, $this->aim, $this->description, $this->longitude, $this->latitude, $this->type);
+        $query = mysqli_query($this->con, "SELECT `id`, `aim`, `description`, `longitude`, `latitude`, `type`, `InstallDate`, `Contact`, `status`  FROM ". $this->TABLE_NAME ." WHERE id ='$this->id'");
+        $ins_fetched = mysqli_fetch_array($query);
 
-        while ($stmt->fetch()) {
-        $this->id = $id;
-        $this->aim = $this->aim;
-        $this->description = $this->description;
-        $this->longitude = $this->longitude;
-        $this->latitude = $this->latitude;
-        $this->type = $this->type;
 
+        if (mysqli_num_rows($query) < 1) {
+
+            $this->id = null;
+            $this->aim = null;
+            $this->description = null;
+            $this->longitude = null;
+            $this->latitude = null;
+            $this->type = null;
+            $this->InstallDate = null;
+            $this->Contact = null;
+            $this->status = null;
+        } else {
+
+            $this->id = $ins_fetched['id'];
+            $this->aim = $ins_fetched['aim'];
+            $this->description = $ins_fetched['description'];
+            $this->longitude = $ins_fetched['longitude'];
+            $this->latitude = $ins_fetched['latitude'];
+            $this->type = $ins_fetched['type'];
+            $this->InstallDate = $ins_fetched['InstallDate'];
+            $this->Contact = $ins_fetched['Contact'];
+            $this->status = $ins_fetched['status'];
         }
     }
 
-
-
     /**
-     * Get the value of id
-     */ 
+     * @return mixed|null
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Get the value of aim
-     */ 
+     * @return mixed|null
+     */
     public function getAim()
     {
         return $this->aim;
     }
 
     /**
-     * Get the value of description
-     */ 
+     * @return mixed|null
+     */
     public function getDescription()
     {
         return $this->description;
     }
 
     /**
-     * Get the value of longitude
-     */ 
+     * @return mixed|null
+     */
     public function getLongitude()
     {
         return $this->longitude;
     }
 
     /**
-     * Get the value of latitude
-     */ 
+     * @return mixed|null
+     */
     public function getLatitude()
     {
         return $this->latitude;
     }
 
     /**
-     * Get the value of type
-     */ 
+     * @return mixed|null
+     */
     public function getType()
     {
+        $type = new InfrastructureTypes($this->con, $this->type);
+        return $type->getName();
+    }
+
+    public function getTypeID(){
         return $this->type;
     }
+
+    /**
+     * @return mixed|null
+     */
+    public function getInstallDate()
+    {
+        $php_date = strtotime($this->InstallDate);
+        $mysql_date = date('d M Y h:i A', $php_date);
+
+        return $mysql_date;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getContact()
+    {
+        return $this->Contact;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getStatusID()
+    {
+        return $this->status;
+    }
+
+    public function getStatus()
+    {
+        $status = '';
+
+        if( $this->status == 1){
+            $status = "Active";
+        } else if($this->status == 2) {
+            $status = "Not Active";
+        }
+
+        return $status;
+    }
+
+
+
+
 }
