@@ -138,7 +138,8 @@ searchBtn.addEventListener("click", () => {
 
 
 var example_array = {
-  ValueA: "Gulu",
+  ValueA: "Select City",
+  ValueB: "Gulu"
 };
 
 var select = document.getElementById("example-select");
