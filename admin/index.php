@@ -115,7 +115,7 @@ require "queries/classes/Infrastructure.php";
                             <img src="images/fluent_data-treemap-20-filled.svg" alt=""/>
                         </div>
                         <div class="stats">
-                            <a href="../index.html"><p class="label" style="color: #fff">View Map</p></a>
+                            <a href="../index.php"><p class="label" style="color: #fff">View Map</p></a>
                         </div>
 
                     </div>

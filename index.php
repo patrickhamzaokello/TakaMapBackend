@@ -1,3 +1,16 @@
+<?php
+// keep the same order
+require("admin/config.php");
+$db = new Database();
+$con = $db->getConnString();
+
+
+$sql = "SELECT * FROM `infrastructuretypes`";
+$all_categories = mysqli_query($con,$sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -117,70 +130,34 @@
               />
               All
             </label>
-            <label class="form-control">
-              <input
-                value="big banks"
-                type="checkbox"
-                name="big bank"
-              />
-              Big Banks
-            </label>
-            <label class="form-control">
-              <input
-                value="small banks"
-                type="checkbox"
-                name="smallbank"
-              />
-              Small Banks
-            </label>
-            <label class="form-control">
-              <input
-                value="Plastic_bins"
-                type="checkbox"
-                name="Plastic_bins"
-              />
-              Plastic Bins
-            </label>
-            <label class="form-control">
-              <input
-                value="RecyclingCenter"
-                type="checkbox"
-                name=" RecyclingCenter"
-              />
-              Recycling Center
-            </label>
-            <label class="form-control">
-              <input
-                value="Electronic Repair"
-                type="checkbox"
-                name="ElectronicRepair"
-              />
-              Electronic Repair
-            </label>
-            <label class="form-control">
-              <input
-                value="Computing Facility"
-                type="checkbox"
-                name="ComputingFacility"
-              />
-              Computing Facility
-            </label>
-            <label class="form-control">
-              <input value="Landfill" type="checkbox" name="Landfill" />
-              Landfill
-            </label>
-            <label class="form-control">
-              <input
-                value="Waste Collection"
-                type="checkbox"
-                name="WasteCollection"
-              />
-              Waste Collection
-            </label>
-            <label class="form-control">
-              <input value="Government" type="checkbox" name="Government" />
-              Government
-            </label>
+              <?php
+              // use a while loop to fetch data
+              // from the $all_categories variable
+              // and individually display as an option
+              while ($category = mysqli_fetch_array(
+                  $all_categories,MYSQLI_ASSOC)):;
+                  ?>
+                  <label class="form-control">
+
+                      <input
+                              value="<?php echo $category["name"];
+                              // The value we usually set is the primary key
+                              ?>"
+                              type="checkbox"
+                              name="<?php echo $category["name"];
+                              // The value we usually set is the primary key
+                              ?>"
+
+                      />
+                      <?php echo $category["name"];
+                      // To show the category name to the user
+                      ?>
+                  </label>
+              <?php
+              endwhile;
+              // While loop must be terminated
+              ?>
+
           </ul>
 
           <div id="wrapper"></div>
