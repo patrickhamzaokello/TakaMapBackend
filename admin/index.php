@@ -8,6 +8,7 @@ require('session.php');
 
 require('queries/statsquery.php');
 require('queries/order_new_query.php');
+require "queries/classes/InfrastructureTypes.php";
 require "queries/classes/Infrastructure.php";
 
 

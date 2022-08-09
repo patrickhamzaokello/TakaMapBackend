@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
         var aimID = $("input#aimID").val();
-        var type = $("input#typeID").val();
+        var type = $("select#typeID").val();
         var longitude = $("input#longitudeID").val();
         var latitude = $("input#latitudeID").val();
         var description = $("#descriptionID").val();
@@ -77,6 +77,7 @@ $(document).ready(function () {
         formdata.append("longitude", longitude);
         formdata.append("latitude", latitude);
         formdata.append("description", description);
+
 
 
         fetch(endPoint, {

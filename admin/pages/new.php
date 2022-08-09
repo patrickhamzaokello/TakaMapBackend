@@ -6,6 +6,9 @@ $con = $db->getConnString();
 
 require('../session.php');
 
+$sql = "SELECT * FROM `infrastructuretypes`";
+$all_categories = mysqli_query($con,$sql);
+
 
 ?>
 
@@ -114,7 +117,26 @@ require('../session.php');
                             <label for="aimID" class="labeltext">Aim</label>
                             <input id="aimID" type="text" name="aim" placeholder="Infrastructure Aim" required />
                             <label for="typeID" class="labeltext">Type</label>
-                            <input id="typeID" type="text" name="Type" placeholder="Infrastructure Type" required />
+                            <select id="typeID"  name="Type">
+                                <?php
+                                // use a while loop to fetch data
+                                // from the $all_categories variable
+                                // and individually display as an option
+                                while ($category = mysqli_fetch_array(
+                                    $all_categories,MYSQLI_ASSOC)):;
+                                    ?>
+                                    <option value="<?php echo $category["id"];
+                                    // The value we usually set is the primary key
+                                    ?>">
+                                        <?php echo $category["name"];
+                                        // To show the category name to the user
+                                        ?>
+                                    </option>
+                                <?php
+                                endwhile;
+                                // While loop must be terminated
+                                ?>
+                            </select>
                             <label for="longitudeID" class="labeltext">Longitude</label>
                             <input id="longitudeID" type="text" name="Longitude" placeholder="Infrastructure Longitude" required />
                             <label for="latitudeID" class="labeltext">Latitude</label>

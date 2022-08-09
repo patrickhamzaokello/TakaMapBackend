@@ -97,6 +97,11 @@ class Infrastructure
      */
     public function getType()
     {
+        $type = new InfrastructureTypes($this->con, $this->type);
+        return $type->getName();
+    }
+
+    public function getTypeID(){
         return $this->type;
     }
 
