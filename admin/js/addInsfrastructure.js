@@ -31,7 +31,7 @@ $(document).ready(function () {
             return false;
         }
 
-        if (!type) {
+        if (!type || type == '0') {
             $("#error").fadeIn().text("Enter Infrastructure Type");
             loaderdiv.style.display = "none";
 

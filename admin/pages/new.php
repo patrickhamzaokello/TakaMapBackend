@@ -118,6 +118,7 @@ $all_categories = mysqli_query($con,$sql);
                             <input id="aimID" type="text" name="aim" placeholder="Infrastructure Aim" required />
                             <label for="typeID" class="labeltext">Type</label>
                             <select id="typeID"  name="Type">
+                                <option value="0">Choose Type</option>
                                 <?php
                                 // use a while loop to fetch data
                                 // from the $all_categories variable

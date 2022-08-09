@@ -144,11 +144,19 @@ header nav .useraccount:hover {
   color: #fff;
 }
 
+.saveinfrastructure {
+  /* Style the arrow inside the select element: */
+  /* Point the arrow upwards when the select box is open (active): */
+  /* style the items (options), including the selected item: */
+  /* Style items (options): */
+  /* Hide the items when the select box is closed: */
+}
+
 .saveinfrastructure .labeltext {
   color: #30805e;
 }
 
-.saveinfrastructure input, .saveinfrastructure textarea {
+.saveinfrastructure input, .saveinfrastructure select, .saveinfrastructure textarea {
   display: block;
   width: 100%;
   color: #000000 !important;
@@ -160,6 +168,61 @@ header nav .useraccount:hover {
   padding: 18px 20px;
   margin: 5px 0;
   margin-bottom: 1.5em;
+}
+
+.saveinfrastructure .custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.saveinfrastructure .custom-select select {
+  display: none;
+  /*hide original SELECT element: */
+}
+
+.saveinfrastructure .select-selected {
+  background-color: DodgerBlue;
+}
+
+.saveinfrastructure .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.saveinfrastructure .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.saveinfrastructure .select-items div, .saveinfrastructure .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.saveinfrastructure .select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.saveinfrastructure .select-hide {
+  display: none;
+}
+
+.saveinfrastructure .select-items div:hover, .saveinfrastructure .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .saveinfrastructure .inputsubmit {
