@@ -92,62 +92,66 @@ $all_categories = mysqli_query($con, $sql);
 
     <div class="sidebar">
 
-        <div class="bottom-content">
-            <!-- city select -->
-            <div class="cityselect">
-                <select id="example-select"></select>
-            </div>
 
-        </div>
-        <header style="margin-top: 1em;">
-            <div class="image-text">
-                <div class="text logo-text">
-                    <span class="name">Infrastructure</span>
-                    <span class="profession">Select type to filter</span>
-                </div>
-            </div>
-        </header>
 
         <div class="menu-bar">
-            <div class="menu">
-                <li class="search-box" style="display: none">
-                    <i class="bx bx-search icon"></i>
-                    <input type="text" placeholder="Search..." />
-                </li>
 
-                <ul class="menu-links">
-                    <label class="form-control">
-                        <input value="all" type="checkbox" name="all" checked />
-                        All
-                    </label>
-                    <?php
-                    // use a while loop to fetch data
-                    // from the $all_categories variable
-                    // and individually display as an option
-                    while ($category = mysqli_fetch_array(
-                        $all_categories,
-                        MYSQLI_ASSOC
-                    )) :;
-                    ?>
+            <div class="bottom-content">
+                <!-- city select -->
+                <div class="cityselect">
+                    <select id="example-select"></select>
+                </div>
+
+                <header style="margin-top: 1em;">
+                    <div class="image-text">
+                        <div class="text logo-text">
+                            <span class="name">Infrastructure</span>
+                            <span class="profession">Select type to filter</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="menu">
+                    <li class="search-box" style="display: none">
+                        <i class="bx bx-search icon"></i>
+                        <input type="text" placeholder="Search..." />
+                    </li>
+
+                    <ul class="menu-links">
                         <label class="form-control">
-
-                            <input value="<?php echo $category["name"];
-                                            // The value we usually set is the primary key
-                                            ?>" type="checkbox" name="<?php echo $category["name"];
-                                                            // The value we usually set is the primary key
-                                                            ?>" />
-                            <?php echo $category["name"];
-                            // To show the category name to the user
-                            ?>
+                            <input value="all" type="checkbox" name="all" checked />
+                            All
                         </label>
-                    <?php
-                    endwhile;
-                    // While loop must be terminated
-                    ?>
+                        <?php
+                        // use a while loop to fetch data
+                        // from the $all_categories variable
+                        // and individually display as an option
+                        while ($category = mysqli_fetch_array(
+                            $all_categories,
+                            MYSQLI_ASSOC
+                        )) :;
+                        ?>
+                            <label class="form-control">
 
-                </ul>
+                                <input value="<?php echo $category["name"];
+                                                // The value we usually set is the primary key
+                                                ?>" type="checkbox" name="<?php echo $category["name"];
+                                                                        // The value we usually set is the primary key
+                                                                        ?>" />
+                                <?php echo $category["name"];
+                                // To show the category name to the user
+                                ?>
+                            </label>
+                        <?php
+                        endwhile;
+                        // While loop must be terminated
+                        ?>
 
-                <div id="wrapper"></div>
+                    </ul>
+
+                    <div id="wrapper"></div>
+                </div>
+
             </div>
         </div>
     </div>

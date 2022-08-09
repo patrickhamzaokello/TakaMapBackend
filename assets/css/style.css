@@ -273,7 +273,7 @@ body.dark .sidebar li a:hover .text {
 }
 
 .sidebar .menu-bar {
-  height: calc(100% - 55px);
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
