@@ -167,24 +167,7 @@ $all_categories = mysqli_query($con,$sql);
           <div class="cityselect">
             <select id="example-select"></select>
           </div>
-          <li class="">
-            <a href="../logout.php">
-              <i class="bx bx-log-out icon"></i>
-              <span class="text nav-text">Logout</span>
-            </a>
-          </li>
 
-          <li class="mode">
-            <div class="sun-moon">
-              <i class="bx bx-moon icon moon"></i>
-              <i class="bx bx-sun icon sun"></i>
-            </div>
-            <span class="mode-text text">Dark mode</span>
-
-            <div class="toggle-switch">
-              <span class="switch"></span>
-            </div>
-          </li>
         </div>
       </div>
     </div>
