@@ -574,8 +574,8 @@ body.dark .home .text {
   line-height: 1.1;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1em auto;
-      grid-template-columns: 1em auto;
+  -ms-grid-columns: 1em 1em auto;
+      grid-template-columns: 1em 1em auto;
   gap: 0.5em;
   color: var(--text-color);
 }

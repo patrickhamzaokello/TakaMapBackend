@@ -133,14 +133,19 @@ $all_categories = mysqli_query($con, $sql);
                         ?>
                             <label class="form-control">
 
+
                                 <input value="<?php echo $category["name"];
                                                 // The value we usually set is the primary key
                                                 ?>" type="checkbox" name="<?php echo $category["name"];
-                                                                        // The value we usually set is the primary key
-                                                                        ?>" />
+                                                                            // The value we usually set is the primary key
+                                                                            ?>" />
+                            <img width="20" height="20" src="admin/pages/<?php echo $category["iconpath"]; ?>" alt="">
+
                                 <?php echo $category["name"];
                                 // To show the category name to the user
                                 ?>
+
+
                             </label>
                         <?php
                         endwhile;

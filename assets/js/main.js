@@ -27,9 +27,9 @@ var layerGroup = L.layerGroup().addTo(mymap);
 var LeafIcon = L.Icon.extend({
   options: {
       iconSize:     [38,38],
-      iconAnchor:   [21,55],
-      popupAnchor:  [-3, -40],
-      tooltipAnchor: [-3, -40]
+      iconAnchor:   [19,38],
+      popupAnchor:  [-1, -20],
+      tooltipAnchor: [-1, -20]
   }
 });
 
@@ -95,11 +95,11 @@ function filterCards() {
   const { total_results, infrastructure } = data;
   infrastructure.forEach((element) => {
     const { id, aim, description, longitude, latitude, type,iconpath } = element;
+    var customeIcon = new LeafIcon({iconUrl: iconpath});
 
     let isMatch = checkboxValues.includes(type);
     let isAll = checkboxValues.includes("all");
     if (isMatch) {
-      var customeIcon = new LeafIcon({iconUrl: iconpath});
       // create markers
       const marker = L.marker([latitude, longitude],{icon: customeIcon}).addTo(layerGroup);
       //Add popup message
@@ -116,7 +116,7 @@ function filterCards() {
       marker.bindPopup(template);
     } else if (isAll) {
       // create markers
-      const marker = L.marker([latitude, longitude]).addTo(layerGroup);
+      const marker = L.marker([latitude, longitude],{icon: customeIcon}).addTo(layerGroup);
 
       //Add popup message
       let template = `
