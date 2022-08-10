@@ -101,6 +101,13 @@ class Infrastructure
         return $type->getName();
     }
 
+
+    public function getIconPath()
+    {
+        $type = new InfrastructureTypes($this->con, $this->type);
+        return $type->getIconpath();
+    }
+
     public function getTypeID(){
         return $this->type;
     }

@@ -6,6 +6,7 @@ class InfrastructureTypes
     private $con;
     private $id;
     private $name;
+    private $iconpath;
     private $created_at;
 
 
@@ -14,7 +15,7 @@ class InfrastructureTypes
         $this->con = $con;
         $this->id = $id;
 
-        $query = mysqli_query($this->con, "SELECT `id`, `name`, `created_at` FROM ". $this->TABLE_NAME ." WHERE id ='$this->id'");
+        $query = mysqli_query($this->con, "SELECT `id`, `name`,`iconpath`, `created_at` FROM ". $this->TABLE_NAME ." WHERE id ='$this->id'");
         $ins_fetched = mysqli_fetch_array($query);
 
 
@@ -28,6 +29,7 @@ class InfrastructureTypes
 
             $this->id = $ins_fetched['id'];
             $this->name = $ins_fetched['name'];
+            $this->iconpath = $ins_fetched['iconpath'];
             $this->created_at = $ins_fetched['created_at'];
 
         }
@@ -38,6 +40,18 @@ class InfrastructureTypes
     {
         return $this->name;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIconpath()
+    {
+        $baseur = "http://yugimap.com/admin/pages/";
+        return $baseur.$this->iconpath;
+    }
+
+
+
 
 
     public function getCreatedAT()

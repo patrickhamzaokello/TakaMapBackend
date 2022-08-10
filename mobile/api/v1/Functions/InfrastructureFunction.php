@@ -60,6 +60,7 @@ class InfrastructureFunction
                 $temp['longitude'] = $type->getLongitude();
                 $temp['latitude'] = $type->getLatitude();
                 $temp['type'] = $type->getType();
+                $temp['iconpath'] = $type->getIconPath();
 //
                 array_push($itemRecords["infrastructure"], $temp);
             }
