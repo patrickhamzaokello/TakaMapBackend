@@ -120,6 +120,9 @@ require('../session.php');
                         <form class="saveinfrastructure" action="" method="post">
                             <label for="typeID" class="labeltext">Type</label>
                             <input id="typeID" type="text" name="type" placeholder="Infrastructure Type" required />
+
+                            <label for="typeID" class="labeltext">Map Icon</label>
+                            <input id="file_input_map_icon" name="file-input-name" class="form-control" type='file' accept="image/*" />
                             <p style="display: block" id="error"></p>
                             <button class="inputsubmit" type="submit" value="Save">Save Infrastructure</button>
                         </form>
