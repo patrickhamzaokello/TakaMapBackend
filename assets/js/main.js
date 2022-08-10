@@ -24,6 +24,15 @@ const url = "https://yugimap.com/mobile/api/v1/infrastructure/read.php?page=1";
 var data = [];
 var layerGroup = L.layerGroup().addTo(mymap);
 
+var LeafIcon = L.Icon.extend({
+  options: {
+      iconSize:     [38,38],
+      iconAnchor:   [21,55],
+      popupAnchor:  [-3, -40],
+      tooltipAnchor: [-3, -40]
+  }
+});
+
 async function getInfrastructure() {
   const response = await fetch(url);
   data = await response.json();
@@ -31,10 +40,11 @@ async function getInfrastructure() {
   const { total_results, infrastructure } = data;
 
   infrastructure.forEach((element) => {
-    const { id, aim, description, longitude, latitude, type } = element;
+    const { id, aim, description, longitude, latitude, type,iconpath } = element;
 
+    var customeIcon = new LeafIcon({iconUrl: iconpath});
     // create markers
-    const marker = L.marker([latitude, longitude]).addTo(layerGroup);
+    const marker = L.marker([latitude, longitude],{icon: customeIcon}).addTo(layerGroup);
 
     //Add popup message
     let template = `
@@ -43,7 +53,6 @@ async function getInfrastructure() {
             <h1 style="color: #F6FFEE; font-size: 22px;">${type}</h1>
             <p style="margin: 0;color: #CDEDCB;">${description}</p>
             <p style="margin: 0;color:#36CC7C ;margin-top: 1em;"><span style="color: #CDEDCB;">Aim </span>${aim}</p>
-            <p style="margin: 0;"><span style="color: #CDEDCB;">Contact</span> 0787250196</p>
             <p style="margin: 0;"><span style="color: #CDEDCB;">Install Date</span> 8th Jun 2022</p>
             <p style=" margin: 0; color: #D9D055; margin-top: 1em; font-size: 12px;">This location may change based on the tracker device</p>
           </div>
@@ -85,14 +94,14 @@ function filterCards() {
   checkboxValues = grabCheckboxValues();
   const { total_results, infrastructure } = data;
   infrastructure.forEach((element) => {
-    const { id, aim, description, longitude, latitude, type } = element;
+    const { id, aim, description, longitude, latitude, type,iconpath } = element;
 
     let isMatch = checkboxValues.includes(type);
     let isAll = checkboxValues.includes("all");
     if (isMatch) {
+      var customeIcon = new LeafIcon({iconUrl: iconpath});
       // create markers
-      const marker = L.marker([latitude, longitude]).addTo(layerGroup);
-
+      const marker = L.marker([latitude, longitude],{icon: customeIcon}).addTo(layerGroup);
       //Add popup message
       let template = `
 
@@ -100,7 +109,6 @@ function filterCards() {
             <h1 style="color: #F6FFEE; font-size: 22px;">${type}</h1>
             <p style="margin: 0;color: #CDEDCB;">${description}</p>
             <p style="margin: 0;color:#36CC7C ;margin-top: 1em;"><span style="color: #CDEDCB;">Aim </span>${aim}</p>
-            <p style="margin: 0;"><span style="color: #CDEDCB;">Contact</span> 0787250196</p>
             <p style="margin: 0;"><span style="color: #CDEDCB;">Install Date</span> 8th Jun 2022</p>
             <p style=" margin: 0; color: #D9D055; margin-top: 1em; font-size: 12px;">This location may change based on the tracker device</p>
           </div>
@@ -117,7 +125,6 @@ function filterCards() {
             <h1 style="color: #F6FFEE; font-size: 22px;">${type}</h1>
             <p style="margin: 0;color: #CDEDCB;">${description}</p>
             <p style="margin: 0;color:#36CC7C ;margin-top: 1em;"><span style="color: #CDEDCB;">Aim </span>${aim}</p>
-            <p style="margin: 0;"><span style="color: #CDEDCB;">Contact</span> 0787250196</p>
             <p style="margin: 0;"><span style="color: #CDEDCB;">Install Date</span> 8th Jun 2022</p>
             <p style=" margin: 0; color: #D9D055; margin-top: 1em; font-size: 12px;">This location may change based on the tracker device</p>
           </div>
