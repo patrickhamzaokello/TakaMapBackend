@@ -133,17 +133,17 @@ require "../queries/classes/Infrastructure.php";
                             $infras = new Infrastructure($con, $row);
                             ?>
 
-                            <div class="product-card" style="background-color:#228765 ; color: #fff; font-size: 15px;">
+                            <div class="product-card" style="color: #fff; font-size: 15px;">
                                 <div class="infras_card">
-                                    <h1 style="color: #F6FFEE; font-size: 22px;"><?= $infras->getType() ?></h1>
-                                    <p style="color: #CDEDCB;"><?= $infras->getDescription() ?></p>
+                                    <h1 style="color: #228765; font-size: 22px;"><?= $infras->getType() ?></h1>
+                                    <p style="color: #0f3c2d;"><?= $infras->getDescription() ?></p>
                                     <p style="color:#36CC7C ;margin-top: 1em;"><span
-                                                style="color: #CDEDCB;">Aim</span> <?= $infras->getAim() ?></p>
-                                    <p><span style="color: #CDEDCB;">Contact</span> 0787250196</p>
-                                    <p>
-                                        <span style="color: #CDEDCB;">Install Date</span> <?= $infras->getInstallDate() ?>
+                                                style="color: #0f3c2d;">Aim</span> <?= $infras->getAim() ?></p>
+                                    <p style="color:#36CC7C "><span style="color: #0f3c2d;">Contact</span> 0787250196</p>
+                                    <p style="color:#36CC7C ">
+                                        <span style="color: #0f3c2d;">Install Date</span> <?= $infras->getInstallDate() ?>
                                     </p>
-                                    <p style="color: #D9D055; margin-top: 1em; font-size: 12px;">Longitude : <?= $infras->getLongitude() ?> -- Latitude:  <?= $infras->getLatitude() ?></p>
+                                    <p style="color: #023c1c; margin-top: 1em; font-size: 12px;">Longitude : <?= $infras->getLongitude() ?> -- Latitude:  <?= $infras->getLatitude() ?></p>
 
                                     <input type="hidden" name="artistid" value="<?= $infras->getId() ?>">
 
