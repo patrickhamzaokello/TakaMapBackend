@@ -753,6 +753,12 @@ body.dark .home .text {
   padding: 2em;
 }
 
+.mainpanel .elements .activities .typescontainer {
+  display: block;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .mainpanel .elements .activities .childrencontainer {
   display: -ms-grid;
   display: grid;

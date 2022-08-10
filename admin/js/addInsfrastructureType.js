@@ -93,7 +93,7 @@ $(document).ready(function () {
                         loaderdiv.style.display = "none";
                     }, 4000);
 
-                    window.location.href = "../index.php";
+                    window.location.href = "infrastructure_types";
                 }
             })
             .catch(console.error);

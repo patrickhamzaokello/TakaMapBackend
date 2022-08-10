@@ -77,9 +77,9 @@ require "queries/classes/Infrastructure.php";
                     </li>
 
                     <li class="nav-link">
-                        <a href="pages/newType">
+                        <a href="pages/infrastructure_types.php">
                             <i class='bx bx-bell  icon'></i>
-                            <span class="text nav-text">New Type</span>
+                            <span class="text nav-text">Type</span>
                         </a>
                     </li>
 
