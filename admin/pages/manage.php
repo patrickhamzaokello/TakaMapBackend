@@ -203,7 +203,7 @@ $all_categories = mysqli_query($con, $sql);
                             <div id="error"></div>
 
                             <div class="form-group">
-                                <input class="form-control" id="aimID" type="text" name="aim" placeholder="Infrastructure Aim" required />
+                                <input class="form-control" id="aimID" type="text" name="aim" placeholder="Infrastructure Aim"  />
                             </div>
 
                             <div class="form-group">
@@ -233,15 +233,15 @@ $all_categories = mysqli_query($con, $sql);
                             </div>
 
                             <div class="form-group">
-                                <input class="form-control" id="longitudeID" type="text" name="Longitude" placeholder="Infrastructure Longitude" required />
+                                <input class="form-control" id="longitudeID" type="text" name="Longitude" placeholder="Infrastructure Longitude"  />
                             </div>
 
                             <div class="form-group">
 
-                                <input class="form-control" id="latitudeID" type="text" name="Latitude" placeholder="Infrastructure Latitude" required />
+                                <input class="form-control" id="latitudeID" type="text" name="Latitude" placeholder="Infrastructure Latitude" />
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="descriptionID" name="Description" placeholder="Infrastructure Description" required rows="8"></textarea>
+                                <textarea class="form-control" id="descriptionID" name="Description" placeholder="Infrastructure Description"  rows="8"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Approve" style="width: 100% !important;" class="sponsorchildnowbtn">
