@@ -33,7 +33,6 @@ require "../queries/classes/InfrastructureTypes.php";
     <title>Yugi Map</title>
 
     <style type="text/css">
-
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 
         * {
@@ -130,7 +129,7 @@ require "../queries/classes/InfrastructureTypes.php";
             opacity: 1;
         }
 
-        .btn:hover{
+        .btn:hover {
             background-color: #f1fb00;
             color: #000;
         }
@@ -257,66 +256,137 @@ require "../queries/classes/InfrastructureTypes.php";
                         <h6 class="sectionlable">All Types of Infrastructure</h6>
                     </div>
 
-                    <div class="product-card" style="color: #fff; font-size: 15px;">
-                        <div class="infras_card">
-
-                                <a href="newType" class="btn ">Add New</a>
+                        <div class="createnew btn">Add New
                         </div>
 
+                    <div class="table-container">
+                        <table class="table">
+                            <?php if ($infrastructure) : ?>
+
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Edit Action</th>
+                                        <th>Delete Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <?php
+                                    $i = 1;
+                                    foreach ($infrastructure as $row) :
+                                    ?>
+
+                                        <?php
+                                        $infras = new InfrastructureTypes($con, $row);
+                                        ?>
+
+
+                                        <tr>
+                                            <td data-label="Order no"><?= $i ?></td>
+                                            <td data-label="Name"><?= $infras->getName() ?> </td>
+                                            <td data-label="Edit">
+
+                                                <div class="approvebutton_parent">
+                                                    <input class="cardID" type="hidden" name="ID" value="<?= $infras->getId() ?>">
+                                                    <button class="approvebutton">Edit</button>
+                                                </div>
+
+                                            </td>
+                                            <td data-label="Delete">
+
+                                                <div class="cancebutton_parent">
+                                                    <input class="cardID" type="hidden" name="orderID" value="<?= $infras->getId() ?>">
+                                                    <button class="cancelbutton">Delete</button>
+                                                </div>
+
+                                            </td>
+
+                                        </tr>
+
+                                    <?php
+                                        $i++;
+                                    endforeach ?>
+
+
+                                </tbody>
+                            <?php else : ?>
+                                <div style="display:grid; place-content: center; text-align: center; color: #3d3a3a; align-content: center; justify-items: center; height: 300px">
+                                    <h1> No Infrastructure Types </h1>
+                                    <p>Create one</p>
+
+                                </div>
+                            <?php endif ?>
+                        </table>
                     </div>
 
 
 
-                        <div class="table-container">
-                            <table class="table">
-                                <?php if ($infrastructure) : ?>
-
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Edit Action</th>
-                                            <th>Delete Action</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-
-
-                                    
-                                        <?php
-                                        $i = 1;
-                                        foreach ($infrastructure as $row) :
-                                        ?>
-
-                                            <?php
-                                            $infras = new InfrastructureTypes($con, $row);
-                                            ?>
-
-
-                                            <tr>
-                                                <td data-label="Order no"><?= $i ?></td>
-                                                <td data-label="Name"><?= $infras->getName() ?> </td>
-                                                <td data-label="Edit"><a href="#<?= $infras->getId() ?>">Edit</a> </td>
-                                                <td data-label="Delete"> <a href="#<?= $infras->getId() ?>">Delete</a> </td>
-
-                                            </tr>
-
-                                        <?php
-                                        $i++;
-                                         endforeach ?>
-
-
-                                    </tbody>
-                                <?php else : ?>
-                                    <div style="display:grid; place-content: center; text-align: center; color: #3d3a3a; align-content: center; justify-items: center; height: 300px">
-                                        <h1> No New Orders </h1>
-                                        <p>Encourage More People to buy from Kakebe Shop</p>
-
-                                    </div>
-                                <?php endif ?>
-                            </table>
+                    <!--        loader-->
+                    <div class="loaderdiv">
+                        <div class="loader-container">
+                            <div class="lds-ripple">
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
+                    </div>
+
+
+
+                    <div class="sponserdiv">
+                        <div class="sponsorshipform">
+                            <div class="sponsormessagediv">
+
+                            </div>
+                            <form id="approveform" action="" method="POST" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                    <input id="ins_type_id" type="hidden" name="childname" class="form-control" placeholder="order_id" disabled>
+                                </div>
+
+                                <div class="approveorderform">
+                                    <h1>Infrastructure Details</h1>
+                                    <p>Provide New Infrastructure Details</p>
+
+                                    <div id="error"></div>
+
+                                    <div class="form-group">
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Infrastructure Type">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input id="file_input_map_icon" name="file-input-name" class="form-control" type='file' accept="image/*" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="submit" value="Approve" style="width: 100% !important;" class="sponsorchildnowbtn">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="reset" id="cancelbtn" style="background: #fff;border: 1px solid #000;padding: 10px 20px;width: 100%;color: #000; border-radius: 5px;" onclick="cancelsponsohip()">Cancel </button>
+                                    </div>
+                                </div>
+
+                                <div class="deleteorder" style="display: none;">
+                                    <h1>Delete Banner</h1>
+                                    <p>This action can not be reversed when done! </p>
+
+
+                                    <div class="form-group">
+                                        <input type="submit" value="Delete" style="width: 100% !important;" class="sponsorchildnowbtn">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="reset" id="cancelbtn" style="background: #fff;border: 1px solid #000;padding: 10px 20px;width: 100%;color: #000; border-radius: 5px;" onclick="cancelsponsohip()">Cancel </button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+                        </div>
+                    </div>
 
                 </div>
 
@@ -341,7 +411,9 @@ require "../queries/classes/InfrastructureTypes.php";
         searchBtn.addEventListener("click", () => {
             sidebar.classList.remove("close");
         })
+        
     </script>
+     <script src="../js/processType.js"></script>
 
 
 </body>
