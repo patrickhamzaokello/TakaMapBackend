@@ -91,10 +91,10 @@ if (isset($_POST['form_action'])) {
                         $query = mysqli_query($con, "UPDATE `infrastructuretypes` SET `name`='$type',`iconpath`='$db_targetPath' WHERE  `id` = $type_id ");
 
                         $data['success'] = true;
-                        $data['message'] = 'Infrastructure Type Added!';
+                        $data['message'] = 'Infrastructure Type Updated!';
                     } else {
                         $data['success'] = false;
-                        $data['message'] = 'Infrastructure Type not Added';
+                        $data['message'] = 'Infrastructure Type not Updated';
                     }
                 } else {
                     $type = mysqli_real_escape_string($con, $_POST['type_name']);
@@ -116,10 +116,10 @@ if (isset($_POST['form_action'])) {
                         $query = mysqli_query($con, "UPDATE `infrastructuretypes` SET `name`='$type',`iconpath`='$db_targetPath' WHERE  `id` = $type_id ");
 
                         $data['success'] = true;
-                        $data['message'] = 'Infrastructure Type Added!';
+                        $data['message'] = 'Infrastructure Type Updated!';
                     } else {
                         $data['success'] = false;
-                        $data['message'] = 'Infrastructure Type not Added';
+                        $data['message'] = 'Infrastructure Type not Updated';
                     }
 
                 }

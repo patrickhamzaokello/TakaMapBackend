@@ -148,17 +148,11 @@ $(document).ready(function () {
 
 
 
-      formdata.append("aim", aimID);
-      formdata.append("type", type);
+      formdata.append("aim", aimID.replace(/['"]+/g, "").replace(/[^\w\s]/gi, ""));
+      formdata.append("type",type);
       formdata.append("longitude", longitude);
       formdata.append("latitude", latitude);
-      formdata.append("description", description);
-
-    
-      formdata.append(
-        "type_name",
-          type_name.replace(/['"]+/g, "").replace(/[^\w\s]/gi, "")
-      );
+      formdata.append("description", description.replace(/['"]+/g, "").replace(/[^\w\s]/gi, ""));
 
       if (form_action == 2) {
         formdata.append("type_id", ins_type_id);
@@ -169,8 +163,6 @@ $(document).ready(function () {
 
     formdata.append("form_action", form_action);
 
-    console.log("form_action" + form_action)
-    console.log("ins_type_id"+ ins_type_id)
 
     fetch(endPoint, {
       method: "post",

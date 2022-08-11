@@ -356,7 +356,7 @@ require "../queries/classes/InfrastructureTypes.php";
                         </div>
 
                         <div class="deleteorder" style="display: none;">
-                            <h1>Delete Banner</h1>
+                            <h1>Delete Type</h1>
                             <p>This action can not be reversed when done! </p>
 
 
