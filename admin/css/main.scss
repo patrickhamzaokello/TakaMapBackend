@@ -555,7 +555,7 @@ body.dark .home .text {
 // end of nav css
 
 .mainpanel {
-  height: 100vh;
+  height: 100%;
   padding: 0 1em;
   background: #f8f7ff;
   overflow-y: auto;
@@ -652,7 +652,6 @@ body.dark .home .text {
 
   .elements {
     display: flex;
-    height: 100%;
 
     .activities {
       width: 100%;

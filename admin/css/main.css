@@ -646,7 +646,7 @@ body.dark .home .text {
 }
 
 .mainpanel {
-  height: 100vh;
+  height: 100%;
   padding: 0 1em;
   background: #f8f7ff;
   overflow-y: auto;
@@ -749,7 +749,6 @@ body.dark .home .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
 }
 
 .mainpanel .elements .activities {
