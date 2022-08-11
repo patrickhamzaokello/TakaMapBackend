@@ -69,12 +69,7 @@ require "queries/classes/Infrastructure.php";
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="pages/new">
-                            <i class='bx bx-trash-alt icon'></i>
-                            <span class="text nav-text">Add Infrastructure</span>
-                        </a>
-                    </li>
+                   
 
                     <li class="nav-link">
                         <a href="pages/infrastructure_types.php">

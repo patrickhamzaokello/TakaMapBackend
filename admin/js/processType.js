@@ -2,7 +2,7 @@ const approveOrderBtn = document.querySelectorAll(".approvebutton_parent");
 const cancelORderBTn = document.querySelectorAll(".cancebutton_parent");
 const cardinput_id = document.querySelector("#ins_type_id");
 
-const createnewBTN = document.querySelectorAll(".createnew");
+const createnewBTN = document.querySelectorAll(".createnewbtn");
 const sponsorshipform = document.querySelector(".sponserdiv");
 const loaderdiv = document.querySelector(".loaderdiv");
 

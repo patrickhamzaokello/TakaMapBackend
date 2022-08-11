@@ -156,7 +156,9 @@ header nav .useraccount:hover {
   color: #30805e;
 }
 
-.saveinfrastructure input, .saveinfrastructure select, .saveinfrastructure textarea {
+.saveinfrastructure input,
+.saveinfrastructure select,
+.saveinfrastructure textarea {
   display: block;
   width: 100%;
   color: #000000 !important;
@@ -200,7 +202,8 @@ header nav .useraccount:hover {
   top: 7px;
 }
 
-.saveinfrastructure .select-items div, .saveinfrastructure .select-selected {
+.saveinfrastructure .select-items div,
+.saveinfrastructure .select-selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -221,15 +224,16 @@ header nav .useraccount:hover {
   display: none;
 }
 
-.saveinfrastructure .select-items div:hover, .saveinfrastructure .same-as-selected {
+.saveinfrastructure .select-items div:hover,
+.saveinfrastructure .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 .saveinfrastructure .inputsubmit {
   padding: 18px 74px;
   /* width: 100%; */
-  background: #02A676;
-  border: 1px solid #02A676;
+  background: #02a676;
+  border: 1px solid #02a676;
   color: white;
   outline: none;
   margin-top: 1em;
@@ -242,7 +246,7 @@ header nav .useraccount:hover {
   /* width: 100%; */
   background: #d8fff3;
   border: 1px solid #d8fff3;
-  color: #02A676;
+  color: #02a676;
   outline: none;
   font-size: 20px;
   float: right;
@@ -745,12 +749,38 @@ body.dark .home .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
 }
 
 .mainpanel .elements .activities {
   width: 100%;
   background: #ffffff;
   padding: 2em;
+}
+
+.mainpanel .elements .activities .btncreatenew {
+  text-decoration: none;
+  line-height: 35px;
+  display: inline-block;
+  background-color: #028f2c;
+  font-weight: 200;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 4px;
+  vertical-align: middle;
+  padding: 3px 24px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.mainpanel .elements .activities .btncreatenew:hover {
+  background-color: #f1fb00;
+  color: #000;
 }
 
 .mainpanel .elements .activities .typescontainer {
@@ -1171,6 +1201,8 @@ body.dark .home .text {
   background: #fff;
   padding: 2em 1em;
   border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .linkss a {
@@ -1289,7 +1321,7 @@ body.dark .home .text {
 
 .approvebutton {
   padding: 5px 18px;
-  background: black !important;
+  background: #11b93a !important;
   color: white;
   border: 1px solid #00c462 !important;
   -webkit-box-shadow: none !important;

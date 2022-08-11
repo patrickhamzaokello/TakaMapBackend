@@ -138,7 +138,9 @@ header {
   .labeltext {
     color: #30805e;
   }
-  input,select,textarea {
+  input,
+  select,
+  textarea {
     display: block;
     width: 100%;
     color: #000000 !important;
@@ -155,15 +157,15 @@ header {
     position: relative;
     font-family: Arial;
   }
-  
+
   .custom-select select {
     display: none; /*hide original SELECT element: */
   }
-  
+
   .select-selected {
     background-color: DodgerBlue;
   }
-  
+
   /* Style the arrow inside the select element: */
   .select-selected:after {
     position: absolute;
@@ -175,22 +177,23 @@ header {
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
   }
-  
+
   /* Point the arrow upwards when the select box is open (active): */
   .select-selected.select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
     top: 7px;
   }
-  
+
   /* style the items (options), including the selected item: */
-  .select-items div,.select-selected {
+  .select-items div,
+  .select-selected {
     color: #ffffff;
     padding: 8px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
   }
-  
+
   /* Style items (options): */
   .select-items {
     position: absolute;
@@ -200,24 +203,22 @@ header {
     right: 0;
     z-index: 99;
   }
-  
+
   /* Hide the items when the select box is closed: */
   .select-hide {
     display: none;
   }
-  
-  .select-items div:hover, .same-as-selected {
+
+  .select-items div:hover,
+  .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
   }
-
-  
-
 
   .inputsubmit {
     padding: 18px 74px;
     /* width: 100%; */
-    background: #02A676;
-    border: 1px solid #02A676;
+    background: #02a676;
+    border: 1px solid #02a676;
     color: white;
     outline: none;
     margin-top: 1em;
@@ -225,16 +226,16 @@ header {
     float: right;
   }
 
-  .inputcancel{
+  .inputcancel {
     padding: 18px 74px;
     /* width: 100%; */
     background: #d8fff3;
     border: 1px solid #d8fff3;
-    color: #02A676;
+    color: #02a676;
     outline: none;
     font-size: 20px;
     float: right;
-    margin: 1em
+    margin: 1em;
   }
 }
 
@@ -651,13 +652,36 @@ body.dark .home .text {
 
   .elements {
     display: flex;
+    height: 100%;
 
     .activities {
       width: 100%;
       background: #ffffff;
       padding: 2em;
 
-      .typescontainer{
+      .btncreatenew {
+        text-decoration: none;
+        line-height: 35px;
+        display: inline-block;
+        background-color: #028f2c;
+        font-weight: 200;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 4px;
+        vertical-align: middle;
+        padding: 3px 24px;
+        user-select: none;
+        border: 1px solid transparent;
+        font-size: 14px;
+        opacity: 1;
+      }
+
+      .btncreatenew:hover {
+        background-color: #f1fb00;
+        color: #000;
+      }
+
+      .typescontainer {
         display: block;
         flex-wrap: wrap;
       }
@@ -1036,6 +1060,8 @@ body.dark .home .text {
   background: #fff;
   padding: 2em 1em;
   border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .linkss a {
@@ -1149,7 +1175,7 @@ body.dark .home .text {
 
 .approvebutton {
   padding: 5px 18px;
-  background: rgb(0, 0, 0) !important;
+  background: #11b93a !important;
   color: rgb(255, 255, 255);
   border: 1px solid #00c462 !important;
   -webkit-box-shadow: none !important;
