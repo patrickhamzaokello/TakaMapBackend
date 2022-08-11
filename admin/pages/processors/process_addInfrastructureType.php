@@ -72,8 +72,30 @@ if (isset($_POST['form_action'])) {
 
                 // Use unlink() function to delete a file
                 if (!unlink($whole_image_path)) {
-                    $data['success'] = false;
-                    $data['message'] = 'Image can not be deleted due to an error';
+                    $type = mysqli_real_escape_string($con, $_POST['type_name']);
+
+                    // generating image name
+                    $formatedname = strip_tags($type);
+                    $formatedname = str_replace(" ", "_", $formatedname);
+
+                    $temp = explode(".", $_FILES["inputfile"]["name"]);
+
+                    // setting image new file name
+                    $postfix = '_' . date('YmdHis') . '_' . str_pad(rand(1, 10000), 5, '0', STR_PAD_LEFT);
+                    $newfilename = stripslashes($formatedname . '_map_icon') . $postfix . '.' . end($temp);
+
+                    $targetPath = $target_dir . basename($newfilename);
+                    $db_targetPath = $db_target_dir . basename($newfilename);
+
+                    if (move_uploaded_file($_FILES['inputfile']['tmp_name'], $targetPath)) {
+                        $query = mysqli_query($con, "UPDATE `infrastructuretypes` SET `name`='$type',`iconpath`='$db_targetPath' WHERE  `id` = $type_id ");
+
+                        $data['success'] = true;
+                        $data['message'] = 'Infrastructure Type Added!';
+                    } else {
+                        $data['success'] = false;
+                        $data['message'] = 'Infrastructure Type not Added';
+                    }
                 } else {
                     $type = mysqli_real_escape_string($con, $_POST['type_name']);
 
@@ -121,8 +143,19 @@ if (isset($_POST['form_action'])) {
 
                 // Use unlink() function to delete a file
                 if (!unlink($whole_image_path)) {
-                    $data['success'] = false;
-                    $data['message'] = 'Image can not be deleted due to an error';
+                    $delete_type_sql = "DELETE FROM `infrastructuretypes` WHERE  `id` = $type_id";
+
+                    mysqli_query($con, $delete_type_sql);
+
+                    $affected_rows = mysqli_affected_rows($con);
+
+                    if ($affected_rows >= 1) {
+                        $data['success'] = true;
+                        $data['message'] = $affected_rows . ' Infrastructure Deleted! ';
+                    } else if ($affected_rows <= 0) {
+                        $data['success'] = false;
+                        $data['message'] = 'Infrastructure Type Not Deleted';
+                    }
                 } else {
                     $delete_type_sql = "DELETE FROM `infrastructuretypes` WHERE  `id` = $type_id";
 
