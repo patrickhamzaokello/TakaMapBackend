@@ -3,7 +3,9 @@ class InfrastructureFunction
 {
 
     private $itemsTable = "infrastructure";
+    private $infrastructuretypesTable = "infrastructuretypes";
     public $id;
+    public $typeid;
     private $conn;
     public $page;
 
@@ -34,6 +36,7 @@ class InfrastructureFunction
 
             $itemRecords["page"] = $this->page;
             $itemRecords["infrastructure"] = array();
+            $itemRecords["types"] = array();
             $itemRecords["total_pages"] = $total_pages;
             $itemRecords["total_results"] = $total_rows;
 
@@ -63,6 +66,27 @@ class InfrastructureFunction
                 $temp['iconpath'] = $type->getIconPath();
 //
                 array_push($itemRecords["infrastructure"], $temp);
+            }
+
+            $stmt = $this->conn->prepare("SELECT `id` FROM $this->infrastructuretypesTable ORDER BY `infrastructuretypes`.`name` ASC");
+            $stmt->execute();
+            $stmt->bind_result($this->typeid);
+
+            $ins_types_id =array();
+
+            while ($stmt->fetch()){
+                array_push($ins_types_id, $this->typeid);
+            }
+            foreach ($ins_types_id as $id){
+                $temp = array();
+
+                $type = new InfrastructureTypes($this->conn,$id);
+
+                $temp['id'] = $type->getId();
+                $temp['name'] = $type->getName();
+                $temp['iconpath'] = $type->getIconPath();
+//
+                array_push($itemRecords["types"], $temp);
             }
 
             return $itemRecords;

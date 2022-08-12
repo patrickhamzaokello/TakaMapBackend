@@ -35,6 +35,10 @@ class InfrastructureTypes
         }
     }
 
+    public function getId(){
+        return $this->id;
+    }
+
 
     public function getName()
     {
