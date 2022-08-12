@@ -7,7 +7,7 @@ $con = $db->getConnString();
 require('../session.php');
 
 require('../queries/statsquery.php');
-require('../queries/order_new_query.php');
+require('../queries/manage_infrastructure.php');
 require "../queries/classes/InfrastructureTypes.php";
 require "../queries/classes/Infrastructure.php";
 

@@ -7,7 +7,7 @@ $con = $db->getConnString();
 require('session.php');
 
 require('queries/statsquery.php');
-require('queries/order_new_query.php');
+require('queries/home_infrastructure.php');
 require "queries/classes/InfrastructureTypes.php";
 require "queries/classes/Infrastructure.php";
 
@@ -176,11 +176,7 @@ require "queries/classes/Infrastructure.php";
                                         </p>
                                         <p style="color: #023c1c; margin-top: 1em; font-size: 12px;">Longitude : <?= $infras->getLongitude() ?> -- Latitude: <?= $infras->getLatitude() ?></p>
 
-                                        <input type="hidden" name="artistid" value="<?= $infras->getId() ?>">
 
-                                        <div class="product-card__actions">
-                                            <a href="pages/order_detail.php?id=<?= $infras->getId() ?>" class="btn btn-primary my-2  sponsorbutton">Edit</a>
-                                        </div>
                                     </div>
 
                                 </div>
