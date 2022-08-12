@@ -149,7 +149,7 @@ require "queries/classes/Infrastructure.php";
 
                     <div class="sectionheading">
                         <h3 class="sectionlable">Infrastructures</h3>
-                        <h6 class="sectionlable">All Active Infrastructures</h6>
+                        <h6 class="sectionlable">Recently Added Infrastructures</h6>
                     </div>
 
                     <?php if ($infrastructure) : ?>
