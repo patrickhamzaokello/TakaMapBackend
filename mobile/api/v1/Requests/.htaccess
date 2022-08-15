@@ -1,3 +1,4 @@
 RewriteEngine On    # Turn on the rewriting engine
 RewriteRule ^readAll$ readAll.php [NC,L]
+RewriteRule ^request_pickup$ request_pickup.php [NC,L]
 RewriteRule ^readAll/([0-9_-]*)$ readAll.php?page=$1 [NC,L]
