@@ -20,7 +20,7 @@ const circle = L.circle([2.7720190833020135, 32.30025580020922], {
   color: "green",
 }).addTo(mymap);
 
-const url = "https://yugimap.com/mobile/api/v1/infrastructure/read.php?page=1";
+const url = "https://yugimap.com/mobile/api/v1/Requests/read.php?page=1";
 var data = [];
 var layerGroup = L.layerGroup().addTo(mymap);
 
