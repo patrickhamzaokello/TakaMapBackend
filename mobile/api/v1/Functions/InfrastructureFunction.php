@@ -85,6 +85,7 @@ class InfrastructureFunction
                 $temp['id'] = $type->getId();
                 $temp['name'] = $type->getName();
                 $temp['iconpath'] = $type->getIconPath();
+                $temp['total'] = $type->getTotal();
 //
                 array_push($itemRecords["types"], $temp);
             }

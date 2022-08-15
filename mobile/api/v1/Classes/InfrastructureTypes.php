@@ -55,6 +55,15 @@ class InfrastructureTypes
     }
 
 
+    public function getTotal(){
+        $sql = "SELECT COUNT(*) as count FROM `infrastructure` WHERE `infrastructure`.`type`= $this->id  limit 1";
+        $result = mysqli_query($this->con, $sql);
+        $data = mysqli_fetch_assoc($result);
+        $total_rows = floatval($data['count']);
+        return $total_rows;
+    }
+
+
 
 
 

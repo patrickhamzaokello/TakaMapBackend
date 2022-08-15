@@ -143,10 +143,14 @@ class Infrastructure
     {
         $status = '';
 
+        // active(normal, GREEN =1 ) caution(Orange = 2) inactive(critical, RED = 3)
+
         if( $this->status == 1){
             $status = "Active";
         } else if($this->status == 2) {
-            $status = "Not Active";
+            $status = "Caution";
+        }else if($this->status == 3) {
+            $status = "Inactive";
         }
 
         return $status;
