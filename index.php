@@ -5,7 +5,7 @@ $db = new Database();
 $con = $db->getConnString();
 
 
-$sql = "SELECT * FROM `infrastructuretypes` ORDER BY `infrastructuretypes`.`name` ASC";
+$sql = "SELECT infrastructuretypes.id,infrastructuretypes.name,infrastructuretypes.iconpath,infrastructuretypes.created_at, COUNT(infrastructure.id) AS total_ins FROM infrastructure INNER JOIN infrastructuretypes ON infrastructure.type = infrastructuretypes.id GROUP BY type ORDER BY name ASC";
 $all_categories = mysqli_query($con, $sql);
 
 
@@ -141,9 +141,8 @@ $all_categories = mysqli_query($con, $sql);
                                                                             ?>" />
                             <img width="20" height="20" src="admin/pages/<?php echo $category["iconpath"]; ?>" alt="">
 
-                                <?php echo $category["name"];
-                                // To show the category name to the user
-                                ?>
+                                <?php echo $category["name"]; ?>
+                                <?php echo " (" .$category["total_ins"]. ") "; ?>
 
 
                             </label>
