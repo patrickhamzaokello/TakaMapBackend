@@ -76,16 +76,16 @@ $all_categories = mysqli_query($con, $sql);
                 <a class="nav-link" href="/">Yugi Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pickup">Pickup</a>
+                <a class="nav-link" href="pickup.php">Pickup</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="report">Report</a>
+                <a class="nav-link" href="report.php">Report</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index">Show all </a>
+                <a class="nav-link" href="index.php">Show all </a>
             </li>
         </ul>
     </div>
