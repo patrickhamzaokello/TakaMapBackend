@@ -80,7 +80,7 @@ function grabCheckboxValues() {
   checkboxes.forEach((checkbox) => {
     if(checkbox.checked && checkbox.value == "all" ){
       checkboxValues = [];
-      heckboxValues.push(checkbox.value);
+      checkboxValues.push(checkbox.value);
     } else {
       if (checkbox.checked) checkboxValues.push(checkbox.value);
     }
