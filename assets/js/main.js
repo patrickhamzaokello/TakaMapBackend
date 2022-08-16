@@ -78,7 +78,14 @@ checkboxes.forEach((box) => {
 function grabCheckboxValues() {
   var checkboxValues = [];
   checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) checkboxValues.push(checkbox.value);
+    if(checkbox.checked && checkbox.value == "all" ){
+      while (checkboxValues.length < 0){
+        checkboxValues.pop()
+      }
+    } else {
+      if (checkbox.checked) checkboxValues.push(checkbox.value);
+
+    }
   });
   console.log(checkboxValues);
   return checkboxValues;
