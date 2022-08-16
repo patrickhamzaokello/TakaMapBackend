@@ -79,6 +79,11 @@ function grabCheckboxValues() {
   var checkboxValues = [];
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) checkboxValues.push(checkbox.value);
+    if(checkbox.value == "all" && checkbox.checked){
+        if(checkbox.value != "all" && checkbox.checked){
+            checkbox.checked = false;
+        }
+    }
   });
   console.log(checkboxValues);
   return checkboxValues;
