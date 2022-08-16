@@ -79,9 +79,9 @@ function grabCheckboxValues() {
   var checkboxValues = [];
   checkboxes.forEach((checkbox) => {
     if(checkbox.checked && checkbox.value == "all" ){
-      checkboxValues.length = 0;
-      checkboxValues.push(checkbox.value);
+      if (checkbox.checked) checkboxValues.push(checkbox.value);
     } else {
+      checkbox.checked = false
       if (checkbox.checked) checkboxValues.push(checkbox.value);
     }
   });
