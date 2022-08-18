@@ -7,11 +7,13 @@ header("Acess-Control-Allow-Methods: POST"); // here is define the request metho
 include 'dbconfig.php'; // include database connection file
 
 $data = json_decode(file_get_contents("php://input"), true); // collect input parameters and convert into readable format
-	
 $fileName  =  $_FILES['sendimage']['name'];
 $tempPath  =  $_FILES['sendimage']['tmp_name'];
 $fileSize  =  $_FILES['sendimage']['size'];
-		
+$description  =  $_POST['description'];
+$title  =  $_POST['title'];
+$userID  =  $_POST['userID'];
+
 if(empty($fileName))
 {
 	$errorMSG = json_encode(array("message" => "please select image", "status" => false));	
@@ -57,7 +59,7 @@ else
 // if no error caused, continue ....
 if(!isset($errorMSG))
 {
-	$query =  mysqli_query($conn,'INSERT into tbl_image (name) VALUES("'.$fileName.'")');
+	$query =  mysqli_query($conn,'INSERT into tbl_image (userid, title,name, description) VALUES("'.$userID.'","'.$title.'","'.$fileName.'","'.$description.'")');
 			
 	echo json_encode(array("message" => "Image Uploaded Successfully", "status" => true));	
 }
