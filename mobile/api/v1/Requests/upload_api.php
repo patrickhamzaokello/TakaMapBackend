@@ -4,7 +4,12 @@ header("Content-Type: application/json");
 header("Acess-Control-Allow-Origin: *");
 header("Acess-Control-Allow-Methods: POST"); // here is define the request method
 
-include 'dbconfig.php'; // include database connection file
+
+include_once '../../../../admin/config.php';
+
+$database = new Database();
+$db = $database->getConnString();
+
 
 $data = json_decode(file_get_contents("php://input"), true); // collect input parameters and convert into readable format
 $fileName  =  $_FILES['sendimage']['name'];
@@ -14,14 +19,24 @@ $description  =  $_POST['description'];
 $title  =  $_POST['title'];
 $userID  =  $_POST['userID'];
 
-if(empty($fileName))
+if(empty($userID))
 {
-	$errorMSG = json_encode(array("message" => "please select image", "status" => false));	
+    $errorMSG = json_encode(array("message" => "please provide user ID", "status" => false));
 	echo $errorMSG;
+} else if (empty($title)){
+    $errorMSG = json_encode(array("message" => "please provide case title", "status" => false));
+    echo $errorMSG;
+}else if (empty($description)){
+    $errorMSG = json_encode(array("message" => "please provide case description", "status" => false));
+    echo $errorMSG;
+}else if (empty($fileName)){
+    $errorMSG = json_encode(array("message" => "please select image", "status" => false));
+
+    echo $errorMSG;
 }
 else
 {
-	$upload_path = 'upload/'; // set upload folder path 
+	$upload_path = 'mobile_uploads/'; // set upload folder path
 	
 	$fileExt = strtolower(pathinfo($fileName,PATHINFO_EXTENSION)); // get image extension
 		
@@ -59,7 +74,7 @@ else
 // if no error caused, continue ....
 if(!isset($errorMSG))
 {
-	$query =  mysqli_query($conn,'INSERT into tbl_image (userid, title,name, description) VALUES("'.$userID.'","'.$title.'","'.$fileName.'","'.$description.'")');
+	$query =  mysqli_query($db,'INSERT into tbl_image (userid, title,name, description) VALUES("'.$userID.'","'.$title.'","'.$fileName.'","'.$description.'")');
 			
 	echo json_encode(array("message" => "Image Uploaded Successfully", "status" => true));	
 }
