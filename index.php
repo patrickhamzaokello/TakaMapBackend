@@ -84,9 +84,7 @@ $all_categories = mysqli_query($con, $sql);
             <li class="nav-item">
                 <a class="nav-link" href="report.php">Report</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Show all </a>
-            </li>
+
         </ul>
     </div>
 </nav>
@@ -112,10 +110,14 @@ $all_categories = mysqli_query($con, $sql);
             </header>
 
             <div class="menu">
-                <li class="search-box" style="display: none">
-                    <i class="bx bx-search icon"></i>
-                    <input type="text" placeholder="Search..."/>
-                </li>
+                <button class="search-box" style="margin: 10px 0;
+    padding: 10px 20px;
+    outline: none;
+    background: #b1eb00;
+    border: none;
+    color: white;">
+                    <a class="nav-link" href="index.php">Show all </a>
+                </button>
 
                 <ul class="menu-links">
                     <!--                        <label class="form-control">-->
