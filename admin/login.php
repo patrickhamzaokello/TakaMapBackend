@@ -15,7 +15,7 @@ include("config.php");
     <link rel="stylesheet" href="loginassets/stylesheet/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="loginassets/javascript/main.js"></script>
-    <title>Yugi Map</title>
+    <title>Taka Map</title>
 
 </head>
 
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- <img class="zodongologinlogo" src="pages/assets/zodongo_logo.png" alt=""> -->
                         <p class="logintext">Admin Login</p>
 
-                        <p class="newtopwf">Yugi Map</p>
+                        <p class="newtopwf">Taka Map</p>
                     </div>
 
                     <form action="" method="post">

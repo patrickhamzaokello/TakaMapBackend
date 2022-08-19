@@ -36,7 +36,7 @@ $all_categories = mysqli_query($con, $sql);
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <title>Yugi Map</title>
+    <title>Taka Map</title>
 </head>
 
 <body>
@@ -49,7 +49,7 @@ $all_categories = mysqli_query($con, $sql);
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Yugi Map</span>
+                    <span class="name">Taka Map</span>
                     <span class="profession"><?= $login_session ?></span>
                 </div>
             </div>

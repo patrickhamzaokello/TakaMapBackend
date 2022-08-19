@@ -42,7 +42,7 @@ $all_categories = mysqli_query($con, $sql);
         }
     </style>
 
-    <title>Yugi maps</title>
+    <title>Taka Map</title>
 </head>
 
 <body>
@@ -73,7 +73,7 @@ $all_categories = mysqli_query($con, $sql);
     <div class="tuggle-content">
         <ul class="left-content">
             <li class="nav-item camp_logo">
-                <a class="nav-link" href="/">Yugi Map</a>
+                <a class="nav-link" href="/">Taka Map</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.php">Home</a>
