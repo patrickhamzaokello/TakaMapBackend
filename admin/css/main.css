@@ -955,6 +955,181 @@ body.dark .home .text {
   border: 1px solid #e8cc15 !important;
 }
 
+.mainpanel .elements .activities .case_container .product-card {
+  background: #f9f9f9;
+  padding: 1.5em;
+  display: -ms-grid;
+  display: grid;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.mainpanel .elements .activities .case_container .product-card .case_style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainpanel .elements .activities .case_container .product-card .case_style .case_image {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mainpanel .elements .activities .case_container .product-card .case_style .description {
+  margin-left: 1em;
+}
+
+.mainpanel .elements .activities .case_container .product-card .imagecontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainpanel .elements .activities .case_container .product-card .imagecontainer img {
+  width: 92px;
+  height: 92px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.mainpanel .elements .activities .case_container .product-card .imagecontainer .casetitle {
+  font-size: 14px;
+}
+
+.mainpanel .elements .activities .case_container .product-card .imagecontainer .case_info {
+  font-size: 14px;
+}
+
+.mainpanel .elements .activities .case_container .product-card .casedescription {
+  margin: 1em 0;
+}
+
+.mainpanel .elements .activities .case_container .product-card .casedescription .categoryid {
+  margin-right: 1em;
+  color: black;
+}
+
+.mainpanel .elements .activities .case_container .product-card .casedescription .case_location {
+  color: #009688;
+}
+
+.mainpanel .elements .activities .case_container .product-card .casedescription h1 {
+  font-size: 15px;
+  color: #3cd374;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mainpanel .elements .activities .case_container .product-card .casedescription p {
+  font-size: 15px;
+  color: #707087;
+  text-overflow: ellipsis;
+  margin-top: 0.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mainpanel .elements .activities .case_container .product-card .product-card__actions {
+  width: 122px;
+}
+
+.mainpanel .elements .activities .case_container .product-card .artistlable {
+  color: gray;
+  margin-top: 0.1em;
+}
+
+.mainpanel .elements .activities .case_container .product-card .ordervalue {
+  color: black;
+  margin: 0 0.3em;
+}
+
+.mainpanel .elements .activities .case_container .product-card .addresslayout {
+  margin: 0.5em 0;
+}
+
+.mainpanel .elements .activities .case_container .product-card .ordertagstatus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainpanel .elements .activities .case_container .product-card .childimage {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mainpanel .elements .activities .case_container .product-card h4 {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.mainpanel .elements .activities .case_container .product-card p {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.mainpanel .elements .activities .case_container .product-card .linkss {
+  padding-top: 10px;
+  margin-bottom: 0 !important;
+}
+
+.mainpanel .elements .activities .case_container .product-card .linkss a {
+  background: #000000 !important;
+  border: 1px solid #000000 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: white;
+}
+
+.mainpanel .elements .activities .case_container .product-card .linkss a:hover {
+  background: #0eb62a !important;
+  border: 1px solid #0eb62a !important;
+}
+
+.mainpanel .elements .activities .case_container .product-card .sponsorbutton {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: 1px solid #e5e5e5 !important;
+  margin-top: 1.2em !important;
+  background: #3cd374 !important;
+  color: #fff !important;
+  border: 1px solid #3cd374 !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 12px;
+  padding: 9px;
+}
+
+.mainpanel .elements .activities .case_container .product-card .sponsorbutton:hover {
+  background: #e8cc15 !important;
+  color: #000 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: 1px solid #e8cc15 !important;
+}
+
 .mainpanel .elements .activities .menuitemscontatiner {
   display: -ms-grid;
   display: grid;
