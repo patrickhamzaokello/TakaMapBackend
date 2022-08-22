@@ -57,7 +57,7 @@ require "../queries/classes/InfrastructureTypes.php";
         }
 
         .table thead {
-            background-color: #228765;
+            background-color: #035419;
         }
 
         .table thead tr th {
@@ -68,7 +68,7 @@ require "../queries/classes/InfrastructureTypes.php";
             opacity: 1;
             padding: 12px;
             vertical-align: top;
-            border: 1px solid #ffffff;
+            border: 1px solid #035419;
             text-align: left;
         }
 
@@ -76,8 +76,8 @@ require "../queries/classes/InfrastructureTypes.php";
             font-size: 14px;
             letter-spacing: 0.35px;
             font-weight: normal;
-            color: #000;
-            background-color: #ffffff;
+            color: #fff;
+            background-color: #024416;
             padding: 8px;
             text-align: left;
             border: 1px solid #228765;

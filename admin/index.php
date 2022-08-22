@@ -123,7 +123,7 @@ require "queries/classes/Infrastructure.php";
                     <h6 class="sectionlable">Summary</h6>
                 </div>
                 <div class="statistics">
-                    <div class="card" style="background: #ff0062; color: #fff;">
+                    <div class="card" style="background: #035419; color: #fff;">
                         <div class="illustration">
                             <img src="images/fluent_data-treemap-20-filled.svg" alt=""/>
                         </div>

@@ -253,11 +253,13 @@ header {
 :root {
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
-  --sidebar-color: #fff;
+  --sidebar-color: #035419;
   --primary-color: #518866;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
-  --text-color: #707070;
+  --text-color: #c9ddc9;
+
+  --mainpanelcolor: #096826;
 
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
@@ -557,7 +559,7 @@ body.dark .home .text {
 .mainpanel {
   height: 100%;
   padding: 0 1em;
-  background: #f8f7ff;
+  background: var(--mainpanelcolor);
   overflow-y: auto;
 
   .createnew {
@@ -574,14 +576,14 @@ body.dark .home .text {
 
   .sectionheading {
     h3 {
-      font-size: 18px;
-      color: #000;
+      font-size: 19px;
+      color: #fbff00;
       font-weight: bold;
       text-transform: uppercase;
     }
 
     h6 {
-      color: #bebebe;
+      color: #83ff98;
       font-size: 15px;
       padding-bottom: 1em;
     }
@@ -625,7 +627,7 @@ body.dark .home .text {
       display: flex;
       align-items: center;
       border-radius: 10px;
-      box-shadow: 1px 4px 6px 0px #f1f1f1;
+      // box-shadow: 4px 3px 8px 0px #063a05;
 
       .stats {
         margin-left: 1em;
@@ -655,7 +657,7 @@ body.dark .home .text {
 
     .activities {
       width: 100%;
-      background: #ffffff;
+      background: var(--mainpanelcolor);
       padding: 2em;
 
       .btncreatenew {
@@ -691,7 +693,7 @@ body.dark .home .text {
         grid-gap: 1rem;
         margin-top: 1em;
         .product-card {
-          background: #f9f9f9;
+          background: #dbffd6;
           padding: 1.5em;
           display: grid;
           margin-right: 2em;
@@ -1363,7 +1365,7 @@ body.dark .home .text {
 }
 
 .active {
-  border: 1px solid #707070;
+  border: 1px solid #c3a902;
   border-radius: 6px;
   box-sizing: border-box;
   color: rgb(255, 255, 255) !important;

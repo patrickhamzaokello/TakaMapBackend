@@ -265,11 +265,12 @@ header nav .useraccount:hover {
 :root {
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
-  --sidebar-color: #fff;
+  --sidebar-color: #035419;
   --primary-color: #518866;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
-  --text-color: #707070;
+  --text-color: #c9ddc9;
+  --mainpanelcolor: #096826;
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;
@@ -648,7 +649,7 @@ body.dark .home .text {
 .mainpanel {
   height: 100%;
   padding: 0 1em;
-  background: #f8f7ff;
+  background: var(--mainpanelcolor);
   overflow-y: auto;
 }
 
@@ -665,14 +666,14 @@ body.dark .home .text {
 }
 
 .mainpanel .sectionheading h3 {
-  font-size: 18px;
-  color: #000;
+  font-size: 19px;
+  color: #fbff00;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .mainpanel .sectionheading h6 {
-  color: #bebebe;
+  color: #83ff98;
   font-size: 15px;
   padding-bottom: 1em;
 }
@@ -722,8 +723,6 @@ body.dark .home .text {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
-  -webkit-box-shadow: 1px 4px 6px 0px #f1f1f1;
-          box-shadow: 1px 4px 6px 0px #f1f1f1;
 }
 
 .mainpanel .statistics .card .stats {
@@ -753,7 +752,7 @@ body.dark .home .text {
 
 .mainpanel .elements .activities {
   width: 100%;
-  background: #ffffff;
+  background: var(--mainpanelcolor);
   padding: 2em;
 }
 
@@ -798,7 +797,7 @@ body.dark .home .text {
 }
 
 .mainpanel .elements .activities .childrencontainer .product-card {
-  background: #f9f9f9;
+  background: #dbffd6;
   padding: 1.5em;
   display: -ms-grid;
   display: grid;
@@ -1526,7 +1525,7 @@ body.dark .home .text {
 }
 
 .active {
-  border: 1px solid #707070;
+  border: 1px solid #c3a902;
   border-radius: 6px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

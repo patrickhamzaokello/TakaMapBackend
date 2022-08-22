@@ -173,7 +173,9 @@ require "../queries/classes/Pickup.php";
 
 
                     <?php else : ?>
-                        No infrastructure
+                        <div class="me" style="display: grid; place-content:center; text-align:center; color:#fff;">
+                       No Pickup Request
+                        </div>
                     <?php endif ?>
 
                 </div>
