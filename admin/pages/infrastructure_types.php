@@ -203,6 +203,21 @@ require "../queries/classes/InfrastructureTypes.php";
                         </a>
                     </li>
 
+
+                    <li class="nav-link">
+                        <a href="pickup">
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <span class="text nav-text">Pickups</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="cases">
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <span class="text nav-text">Cases</span>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
 

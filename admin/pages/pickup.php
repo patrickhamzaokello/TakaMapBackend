@@ -7,14 +7,9 @@ $con = $db->getConnString();
 require('../session.php');
 
 require('../queries/statsquery.php');
-require('../queries/manage_infrastructure.php');
-require "../queries/classes/InfrastructureTypes.php";
-require "../queries/classes/Infrastructure.php";
-
-$sql = "SELECT * FROM `infrastructuretypes` ORDER BY `infrastructuretypes`.`name` ASC";
-$all_categories = mysqli_query($con, $sql);
-
-
+require('../queries/pickup_ids.php');
+require "../queries/classes/User.php";
+require "../queries/classes/Pickup.php";
 
 ?>
 
@@ -80,14 +75,14 @@ $all_categories = mysqli_query($con, $sql);
                         </a>
                     </li>
 
-                    <li class="nav-link active">
+                    <li class="nav-link">
                         <a href="manage">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Manage</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    <li class="nav-link active">
                         <a href="pickup">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Pickups</span>
@@ -125,36 +120,34 @@ $all_categories = mysqli_query($con, $sql);
 
 
                     <div class="sectionheading">
-                        <h3 class="sectionlable">Infrastructures</h3>
-                        <h6 class="sectionlable">All Active Infrastructures</h6>
+                        <h3 class="sectionlable">Pick up Requests</h3>
+                        <h6 class="sectionlable">All Active Pickup Requests</h6>
                     </div>
 
-                    <button class="createnewbtn btncreatenew">Add New
-                    </button>
-
-                    <?php if ($infrastructure) : ?>
+                    <?php if ($pickup_requests) : ?>
 
                         <div class="childrencontainer">
 
 
                             <?php
-                            foreach ($infrastructure as $row) :
+                            foreach ($pickup_requests as $row) :
                             ?>
 
                                 <?php
-                                $infras = new Infrastructure($con, $row);
+                                $infras = new Pickup($con, $row);
                                 ?>
 
                                 <div class="product-card" style="color: #fff; font-size: 15px;">
                                     <div class="infras_card">
-                                        <h1 style="color: #228765; font-size: 22px;"><?= $infras->getType() ?></h1>
-                                        <p style="color: #0f3c2d;"><?= $infras->getDescription() ?></p>
-                                        <p style="color:#36CC7C ;margin-top: 1em;"><span style="color: #0f3c2d;">Aim</span> <?= $infras->getAim() ?></p>
-                                        <p style="color:#36CC7C "><span style="color: #0f3c2d;">Contact</span> 0787250196</p>
+                                        <h1 style="color: #228765; font-size: 22px;"><?= $infras->getFullName()?></h1>
+                                        <p style="color: #0f3c2d;"><?= $infras->getTrashDescription() ?></p>
+                                        <p style="color:#36CC7C "><span style="color: #0f3c2d;">Contact</span> <?= $infras->getPhoneNumber()?></p>
                                         <p style="color:#36CC7C ">
-                                            <span style="color: #0f3c2d;">Install Date</span> <?= $infras->getInstallDate() ?>
+                                            <span style="color: #0f3c2d;">Request Date</span> <?= $infras->getDateCreated() ?>
                                         </p>
-                                        <p style="color: #023c1c; margin-top: 1em; font-size: 12px;">Longitude : <?= $infras->getLongitude() ?> -- Latitude: <?= $infras->getLatitude() ?></p>
+                                        <p style="color:#36CC7C ">
+                                            <span style="color: #0f3c2d;">Address</span> <?= $infras->getAddress() ?>
+                                        </p>
 
                                         <input type="hidden" name="artistid" value="<?= $infras->getId() ?>">
 
@@ -162,7 +155,7 @@ $all_categories = mysqli_query($con, $sql);
 
                                             <div class="approvebutton_parent">
                                                 <input class="cardID" type="hidden" name="ID" value="<?= $infras->getId() ?>">
-                                                <button class="approvebutton">Edit</button>
+                                                <button class="approvebutton">Confirm</button>
                                             </div>
 
                                             <div class="cancebutton_parent">
@@ -210,52 +203,11 @@ $all_categories = mysqli_query($con, $sql);
                         </div>
 
                         <div class="approveorderform">
-                            <h1>Infrastructure Details</h1>
-                            <p>Provide New Infrastructure Details</p>
+                            <h1>Confirm Pickup Request</h1>
+                            <p>Users will be notified automatically.</p>
 
                             <div id="error"></div>
 
-                            <div class="form-group">
-                                <input class="form-control" id="aimID" type="text" name="aim" placeholder="Infrastructure Aim"  />
-                            </div>
-
-                            <div class="form-group">
-                                <select class="form-control" id="typeID" name="Type">
-                                    <option value="0">Choose Type</option>
-                                    <?php
-                                    // use a while loop to fetch data
-                                    // from the $all_categories variable
-                                    // and individually display as an option
-                                    while ($category = mysqli_fetch_array(
-                                        $all_categories,
-                                        MYSQLI_ASSOC
-                                    )) :;
-                                    ?>
-                                        <option value="<?php echo $category["id"];
-                                                        // The value we usually set is the primary key
-                                                        ?>">
-                                            <?php echo $category["name"];
-                                            // To show the category name to the user
-                                            ?>
-                                        </option>
-                                    <?php
-                                    endwhile;
-                                    // While loop must be terminated
-                                    ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <input class="form-control" id="longitudeID" type="text" name="Longitude" placeholder="Infrastructure Longitude"  />
-                            </div>
-
-                            <div class="form-group">
-
-                                <input class="form-control" id="latitudeID" type="text" name="Latitude" placeholder="Infrastructure Latitude" />
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="descriptionID" name="Description" placeholder="Infrastructure Description"  rows="8"></textarea>
-                            </div>
                             <div class="form-group">
                                 <input type="submit" value="Approve" style="width: 100% !important;" class="sponsorchildnowbtn">
                             </div>
@@ -266,10 +218,10 @@ $all_categories = mysqli_query($con, $sql);
                         </div>
 
                         <div class="deleteorder" style="display: none;">
-                            <h1>Delete Infrastructure</h1>
+                            <h1>Delete Pickup Request</h1>
                             <p>This action can not be reversed when done! </p>
 
-
+                            <div id="error"></div>
                             <div class="form-group">
                                 <input type="submit" value="Delete" style="width: 100% !important;" class="sponsorchildnowbtn">
                             </div>
