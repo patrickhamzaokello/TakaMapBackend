@@ -1,7 +1,7 @@
 <?php
 $cases_requests = array();
 
-$cases_new= mysqli_query($con, "SELECT id FROM cases WHERE  status = 1 ORDER BY  `cases`.`date_created`");
+$cases_new= mysqli_query($con, "SELECT id FROM cases WHERE  status = 1 ORDER BY  `cases`.`date_created` DESC ");
 
 while ($row = mysqli_fetch_array($cases_new)) {
 
