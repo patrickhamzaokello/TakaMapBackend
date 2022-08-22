@@ -263,7 +263,7 @@ require "../queries/classes/User.php";
             sidebar.classList.remove("close");
         })
     </script>
-    <script src="../js/addInsfrastructure.js"></script>
+    <script src="../js/processCase.js"></script>
 
 
 </body>

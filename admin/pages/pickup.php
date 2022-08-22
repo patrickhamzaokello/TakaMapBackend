@@ -257,7 +257,7 @@ require "../queries/classes/Pickup.php";
             sidebar.classList.remove("close");
         })
     </script>
-    <script src="../js/addInsfrastructure.js"></script>
+    <script src="../js/processPickup.js"></script>
 
 
 </body>
