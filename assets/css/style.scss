@@ -173,8 +173,30 @@ body.dark .sidebar header .toggle {
   transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu {
+.sidebar {
   // margin-top: 40px;
+  .menu {
+    a {
+      text-decoration: none;
+      
+     
+
+      button {
+        margin: 10px 0;
+        padding: 10px 20px;
+        outline: none;
+        background: #007018;
+        border: none;
+        color: #fff;
+        border-radius: 6px;
+      }
+
+      button:hover {
+        background: #ffc107;
+        color: #000;
+      }
+    }
+  }
 }
 
 .sidebar li.search-box {
@@ -488,7 +510,6 @@ $nav-tuggle-btn-size: (
   grid-template-columns: 1em 1em auto;
   gap: 0.5em;
   color: var(--text-color);
-
 }
 
 input[type="checkbox"] {
@@ -577,8 +598,6 @@ input[type="checkbox"]:disabled {
   cursor: not-allowed;
 }
 
-
-
 // USERS styles page and navigation
 
 .cityselect {
@@ -622,12 +641,12 @@ input[type="checkbox"]:disabled {
     }
   }
   .tuggle-content {
-    padding-left: 90px;
+    padding-left: 124px;
   }
   .logo {
-    background: url("../../img/logo.svg") no-repeat center/cover;
+    background: url("../../img/logo.png") no-repeat center/cover;
     display: block;
-    width: 35px;
+    width: 77px;
     height: 35px;
   }
   .registration {

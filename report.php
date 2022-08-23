@@ -21,7 +21,6 @@ $all_categories = mysqli_query($con, $sql);
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="img/logo.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -29,6 +28,7 @@ $all_categories = mysqli_query($con, $sql);
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
 
     <style>
+       
         .leaflet-popup-content-wrapper,
         .leaflet-popup.tip {
             background-color: #228765;
@@ -39,6 +39,14 @@ $all_categories = mysqli_query($con, $sql);
             background: #228765;
             color: #333;
             box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
+        }
+
+        .app_feature_section {
+            position: relative;
+            top: 78px;
+            display: grid;
+            place-content: center;
+            height: 80%;
         }
     </style>
 
@@ -72,7 +80,6 @@ $all_categories = mysqli_query($con, $sql);
         </div>
         <div class="tuggle-content">
             <ul class="left-content">
-
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
@@ -87,83 +94,32 @@ $all_categories = mysqli_query($con, $sql);
         </div>
     </nav>
 
-    <div class="sidebar">
+
+    <section class="app_feature_section">
+        <div class="container">
+            <div class="cardcomponent">
 
 
-        <div class="menu-bar">
+                <div class="loginpagesite align-self-stretch">
 
-            <div class="bottom-content">
-                <!-- city select -->
-                <div class="cityselect">
-                    <select id="example-select"></select>
-                </div>
+                    <div class="formtitle">
 
-                <header style="margin-top: 1em;">
-                    <div class="image-text">
-                        <div class="text logo-text">
-                            <span class="name">Infrastructure</span>
-                            <span class="profession">Select type to filter</span>
-                        </div>
+                        <p class="logintext">Make Report about Trash</p>
+
+                        <p class="newtopwf">Taka Map</p>
                     </div>
-                </header>
-
-                <div class="menu">
-                    <a class="search-box" href="index.php">
-                        <button>
-                            Show all</button>
-                    </a>
 
 
-                    <ul class="menu-links">
-                        <!--                        <label class="form-control">-->
-                        <!--                            <input value="all" type="checkbox" name="all" checked />-->
-                        <!--                            All-->
-                        <!--                        </label>-->
-
-                        <?php
-                        // use a while loop to fetch data
-                        // from the $all_categories variable
-                        // and individually display as an option
-                        while ($category = mysqli_fetch_array(
-                            $all_categories,
-                            MYSQLI_ASSOC
-                        )) :;
-                        ?>
-                            <label class="form-control">
-
-
-                                <input value="<?php echo $category["name"];
-                                                // The value we usually set is the primary key
-                                                ?>" type="checkbox" name="<?php echo $category["name"];
-                                                        // The value we usually set is the primary key
-                                                        ?>" />
-                                <img width="20" height="20" src="admin/pages/<?php echo $category["iconpath"]; ?>" alt="">
-
-                                <?php echo $category["name"]; ?>
-                                <?php echo " (" . $category["total_ins"] . ") "; ?>
-
-
-                            </label>
-                        <?php
-                        endwhile;
-                        // While loop must be terminated
-                        ?>
-
-                    </ul>
-
-                    <div id="wrapper"></div>
                 </div>
 
             </div>
-        </div>
-    </div>
 
-    <section class="home">
-        <div id="map"></div>
+
+        </div>
     </section>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="assets/js/main.js"></script>
+
+
 </body>
 
 </html>

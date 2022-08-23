@@ -218,6 +218,25 @@ body.dark .sidebar header .toggle {
           transform: translateY(-50%) rotate(0deg);
 }
 
+.sidebar .menu a {
+  text-decoration: none;
+}
+
+.sidebar .menu a button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  outline: none;
+  background: #007018;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.sidebar .menu a button:hover {
+  background: #ffc107;
+  color: #000;
+}
+
 .sidebar li.search-box {
   border-radius: 6px;
   background-color: var(--primary-color-light);
@@ -725,13 +744,13 @@ input[type="checkbox"]:disabled {
 }
 
 .main-nav .tuggle-content {
-  padding-left: 90px;
+  padding-left: 124px;
 }
 
 .main-nav .logo {
-  background: url("../../img/logo.svg") no-repeat center/cover;
+  background: url("../../img/logo.png") no-repeat center/cover;
   display: block;
-  width: 35px;
+  width: 77px;
   height: 35px;
 }
 

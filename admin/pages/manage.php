@@ -26,7 +26,7 @@ $all_categories = mysqli_query($con, $sql);
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <link rel="icon" type="image/x-icon" href="pages/assets/z_favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/z_favicon.png">
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../css/main.css" />
@@ -45,7 +45,7 @@ $all_categories = mysqli_query($con, $sql);
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="pages/assets/famlink.png" alt="">
+                    <img src="assets/famlink.png" alt="">
                 </span>
 
                 <div class="text logo-text">
