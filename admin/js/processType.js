@@ -35,6 +35,7 @@ createnewBTN.forEach((productCard) => {
 
 approveOrderBtn.forEach((productCard) => {
   const childNamegot = productCard.querySelector(".cardID").value;
+  const type_NAME = productCard.querySelector(".type_NAME").value;
 
   // Make whole card clickable, but only if event target is NOT a specific card action inside <div Functions="product-card__actions">.
   productCard.addEventListener("click", (e) => {
@@ -49,6 +50,8 @@ approveOrderBtn.forEach((productCard) => {
 
       cardinput_id.value = childNamegot;
       form_action = 2;
+      $("input#name").val(type_NAME);
+
       $("#error").hide();
     }
   });

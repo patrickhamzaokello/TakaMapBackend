@@ -150,7 +150,7 @@ $all_categories = mysqli_query($con, $sql);
                                         <h1 style="color: #228765; font-size: 22px;"><?= $infras->getType() ?></h1>
                                         <p style="color: #0f3c2d;"><?= $infras->getDescription() ?></p>
                                         <p style="color:#36CC7C ;margin-top: 1em;"><span style="color: #0f3c2d;">Aim</span> <?= $infras->getAim() ?></p>
-                                        <p style="color:#36CC7C "><span style="color: #0f3c2d;">Contact</span> 0787250196</p>
+                                        <p style="color:#36CC7C "><span style="color: #0f3c2d;">Contact</span> 0788373973</p>
                                         <p style="color:#36CC7C ">
                                             <span style="color: #0f3c2d;">Install Date</span> <?= $infras->getInstallDate() ?>
                                         </p>
@@ -162,6 +162,11 @@ $all_categories = mysqli_query($con, $sql);
 
                                             <div class="approvebutton_parent">
                                                 <input class="cardID" type="hidden" name="ID" value="<?= $infras->getId() ?>">
+                                                <input class="cardAIM" type="hidden" name="AIM_VAL" value="<?= $infras->getAim() ?>">
+                                                <input class="typeID" type="hidden" name="typeID_VAL" value="<?= $infras->getTypeID() ?>">
+                                                <input class="longVAL" type="hidden" name="longVAL" value="<?= $infras->getLongitude() ?>">
+                                                <input class="latVAL" type="hidden" name="latVAL" value="<?= $infras->getLatitude() ?>">
+                                                <input class="desVAL" type="hidden" name="desVAL" value="<?= $infras->getDescription() ?>">
                                                 <button class="approvebutton">Edit</button>
                                             </div>
 

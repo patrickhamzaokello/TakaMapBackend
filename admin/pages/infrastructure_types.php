@@ -290,6 +290,7 @@ require "../queries/classes/InfrastructureTypes.php";
 
                                                     <div class="approvebutton_parent">
                                                         <input class="cardID" type="hidden" name="ID" value="<?= $infras->getId() ?>">
+                                                        <input class="type_NAME" type="hidden" name="type_NAME" value="<?= $infras->getName() ?>">
                                                         <button class="approvebutton">Edit</button>
                                                     </div>
 
