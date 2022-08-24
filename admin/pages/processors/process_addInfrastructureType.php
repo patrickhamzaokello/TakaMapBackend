@@ -106,6 +106,27 @@ if (isset($_POST['form_action'])) {
                             $data['success'] = false;
                             $data['message'] = 'Infrastructure Type not Updated';
                         }
+                    } else {
+                        $formatedname = strip_tags($type);
+                        $formatedname = str_replace(" ", "_", $formatedname);
+
+                        $temp = explode(".", $_FILES["inputfile"]["name"]);
+
+                        // setting image new file name
+                        $postfix = '_' . date('YmdHis') . '_' . str_pad(rand(1, 10000), 5, '0', STR_PAD_LEFT);
+                        $newfilename = stripslashes($formatedname . '_map_icon') . $postfix . '.' . end($temp);
+                        $targetPath = $target_dir . basename($newfilename);
+                        $db_targetPath = $db_target_dir . basename($newfilename);
+
+                        if (move_uploaded_file($_FILES['inputfile']['tmp_name'], $targetPath)) {
+                            $query = mysqli_query($con, "UPDATE `infrastructuretypes` SET `name`='$type',`iconpath`='$db_targetPath' WHERE  `id` = $type_id ");
+
+                            $data['success'] = true;
+                            $data['message'] = 'Infrastructure Type Updated!';
+                        } else {
+                            $data['success'] = false;
+                            $data['message'] = 'Infrastructure Type not Updated';
+                        }
                     }
                 } else {
                     $data['success'] = false;
