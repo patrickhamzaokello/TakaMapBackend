@@ -108,15 +108,6 @@ $(document).ready(function () {
         return false;
       }
 
-      if (inputfile.files["length"] == 0) {
-        $("#error").fadeIn().text("Choose Cover Picture. Use 300 x 300 image");
-        loaderdiv.style.display = "none";
-
-        setTimeout(function () {
-          $("#error").hide();
-        }, 2000);
-        return false;
-      }
 
       //check image size should be < 3.6M
       if (inputfile.files[0]["size"] > 3620127) {
