@@ -108,30 +108,6 @@ $(document).ready(function () {
         return false;
       }
 
-
-      //check image size should be < 3.6M
-      if (inputfile.files[0]["size"] > 3620127) {
-        $("#error").fadeIn().text("Image is too large. Use 300 x 300 image");
-        loaderdiv.style.display = "none";
-
-        setTimeout(function () {
-          $("#error").hide();
-        }, 2000);
-        return false;
-      }
-
-      //check if file is added
-      if (inputfile.files[0]["size"] < 0) {
-        $("#error").fadeIn().text("Add Cover Image. Use 300 x 300 image");
-        loaderdiv.style.display = "none";
-
-        setTimeout(function () {
-          $("#error").hide();
-        }, 2000);
-        return false;
-      }
-
-
       formdata.append("inputfile", inputfile.files[0]);
       formdata.append(
         "type_name",
@@ -146,9 +122,6 @@ $(document).ready(function () {
     }
 
     formdata.append("form_action", form_action);
-
-    console.log("form_action" + form_action)
-    console.log("ins_type_id"+ ins_type_id)
 
     fetch(endPoint, {
       method: "post",
