@@ -41,13 +41,7 @@ $all_categories = mysqli_query($con, $sql);
             box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
         }
 
-        .app_feature_section {
-            position: relative;
-            top: 78px;
-            display: grid;
-            place-content: center;
-            height: 80%;
-        }
+      
     </style>
 
     <title>Taka Map</title>
@@ -87,7 +81,7 @@ $all_categories = mysqli_query($con, $sql);
                     <a class="nav-link" href="pickup.php">Pickup</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="report.php">Report</a>
+                    <a class="nav-link active" href="report.php">Report</a>
                 </li>
 
             </ul>
@@ -100,15 +94,15 @@ $all_categories = mysqli_query($con, $sql);
             <div class="cardcomponent">
 
 
-                <div class="loginpagesite align-self-stretch">
+                <div class="mobile_feature">
 
-                    <div class="formtitle">
+                    <div class="message">
 
-                        <p class="logintext">Make Report about Trash</p>
+                        <h1 class="heading">Make Report about Trash</h1>
 
-                        <p class="newtopwf">Taka Map</p>
+                        <p class="subheading">This Feature is only available on the mobile app. Download the takamap on google playstore</p>
+                        <a href="https://play.google.com/store/apps" target="_blank"><img class="googleplaybutton" src="img/google play.png" alt="google play"></a>
                     </div>
-
 
                 </div>
 

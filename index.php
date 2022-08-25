@@ -74,7 +74,7 @@ $all_categories = mysqli_query($con, $sql);
             <ul class="left-content">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link active" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="pickup.php">Pickup</a>

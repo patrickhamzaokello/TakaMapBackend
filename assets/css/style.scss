@@ -173,6 +173,12 @@ body.dark .sidebar header .toggle {
   transform: translateY(-50%) rotate(0deg);
 }
 
+.nav-item {
+  .active{
+    border-bottom: 1px solid yellow;
+  }
+}
+
 .sidebar {
   // margin-top: 40px;
   .menu {
@@ -198,6 +204,37 @@ body.dark .sidebar header .toggle {
     }
   }
 }
+
+
+.app_feature_section {
+  position: relative;
+  top: 78px;
+  display: grid;
+  place-content: center;
+  height: 90%;
+  background-color: #096a23;
+
+
+  .mobile_feature{
+    text-align: center;
+    .message{
+      .heading{
+        margin-top: 0.4em;
+        color: #fbff00;
+      }
+      .subheading{
+        margin-top: 0.4em;
+        color: #ccfff1;
+      }
+      .googleplaybutton {
+        width: 203px;
+        margin-top: 1em;
+      }
+    }
+  }
+  
+}
+
 
 .sidebar li.search-box {
   border-radius: 6px;

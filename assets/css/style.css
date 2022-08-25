@@ -218,6 +218,10 @@ body.dark .sidebar header .toggle {
           transform: translateY(-50%) rotate(0deg);
 }
 
+.nav-item .active {
+  border-bottom: 1px solid yellow;
+}
+
 .sidebar .menu a {
   text-decoration: none;
 }
@@ -235,6 +239,35 @@ body.dark .sidebar header .toggle {
 .sidebar .menu a button:hover {
   background: #ffc107;
   color: #000;
+}
+
+.app_feature_section {
+  position: relative;
+  top: 78px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  height: 90%;
+  background-color: #096a23;
+}
+
+.app_feature_section .mobile_feature {
+  text-align: center;
+}
+
+.app_feature_section .mobile_feature .message .heading {
+  margin-top: 0.4em;
+  color: #fbff00;
+}
+
+.app_feature_section .mobile_feature .message .subheading {
+  margin-top: 0.4em;
+  color: #ccfff1;
+}
+
+.app_feature_section .mobile_feature .message .googleplaybutton {
+  width: 203px;
+  margin-top: 1em;
 }
 
 .sidebar li.search-box {
