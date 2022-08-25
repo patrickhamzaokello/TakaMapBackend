@@ -10,11 +10,11 @@
 :root {
   /* ===== Colors ===== */
   --body-color: #fff;
-  --sidebar-color: #fff;
+  --sidebar-color: #047423;
   --primary-color: #695cfe;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
-  --text-color: #707070;
+  --text-color: #e6ffd9;
   --form-control-disabled: #959495;
 
   /* ====== Transition ====== */
@@ -191,7 +191,7 @@ body.dark .sidebar header .toggle {
         margin: 10px 0;
         padding: 10px 20px;
         outline: none;
-        background: #007018;
+        background: #00af25;
         border: none;
         color: #fff;
         border-radius: 6px;
