@@ -139,9 +139,8 @@ $all_categories = mysqli_query($con, $sql);
                                                         ?>" />
                                 <img width="20" height="20" src="admin/pages/<?php echo $category["iconpath"]; ?>" alt="">
 
-                                <?php echo $category["name"]; ?>
-                                <?php echo " (" . $category["total_ins"] . ") "; ?>
-
+                                <p style="font-size: 14px;"><?php echo $category["name"]; ?> <?php echo " (" . $category["total_ins"] . ") "; ?></p>
+                                
 
                             </label>
                         <?php
