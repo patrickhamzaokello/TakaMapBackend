@@ -57,10 +57,10 @@ body.dark {
 /* ===== Sidebar ===== */
 .sidebar {
   position: fixed;
-  top: 90px;
+  top: 80px;
   left: 0;
-  height: calc(100% - 90px);
-  width: 250px;
+  height: calc(100% - 80px);
+  width: 300px;
   padding: 10px 14px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
@@ -359,10 +359,10 @@ body.dark .switch::before {
 
 .home {
   position: absolute;
-  top: 90px;
-  left: 250px;
-  height: calc(100vh - 90px);
-  width: calc(100% - 250px);
+  top: 80px;
+  left: 300px;
+  height: calc(100vh - 80px);
+  width: calc(100% - 300px);
   background-color: var(--body-color);
   transition: var(--tran-05);
   overflow: hidden;
