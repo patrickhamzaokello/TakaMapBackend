@@ -28,7 +28,6 @@ $all_categories = mysqli_query($con, $sql);
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
 
     <style>
-       
         .leaflet-popup-content-wrapper,
         .leaflet-popup.tip {
             background-color: #228765;
@@ -40,8 +39,6 @@ $all_categories = mysqli_query($con, $sql);
             color: #333;
             box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
         }
-
-      
     </style>
 
     <title>Taka Map</title>
@@ -89,20 +86,33 @@ $all_categories = mysqli_query($con, $sql);
     </nav>
 
 
-    <section class="app_feature_section">
+    <section class="report_page">
         <div class="container">
             <div class="cardcomponent">
 
 
-                <div class="mobile_feature">
+                <div class="report_form">
 
-                    <div class="message">
+                    <form action="" method="post">
 
-                        <h1 class="heading">Make Report about Trash</h1>
+                        <label for="Name" class="labeltext">Name</label>
+                        <input id="Name" style="margin-bottom: 2em;" type="text" name="Name" class="inputbox" placeholder="Name" required />
+                        
+                        <label for="Contact" class="labeltext">Contact</label>
+                        <input id="Contact" style="margin-bottom: 2em;" type="text" name="Contact" class="inputbox" placeholder="Email / Phone no" required />
+                        
+                        <label for="Address" class="labeltext">Address</label>
+                        <input id="Address" style="margin-bottom: 2em;" type="address" name="user_address" class="inputbox" placeholder="Address" required />
 
-                        <p class="subheading">This Feature is only available on the mobile app. Download the takamap on google playstore</p>
-                        <a href="https://play.google.com/store/apps" target="_blank"><img class="googleplaybutton" src="img/google play.png" alt="google play"></a>
-                    </div>
+                        <label for="Title" class="labeltext">Title</label>
+                        <input id="Title" style="margin-bottom: 2em;" type="text" name="case_title" class="inputbox" placeholder="Report Title" required />
+                          
+                        <label for="Description" class="labeltext">Description</label>
+                        <textarea id="Description" style="margin-bottom: 2em;" type="text" name="case_description" class="inputbox" placeholder="Report Description" required></textarea>
+
+                        <input class="inputsubmit" type="submit" value="Submit" /><br />
+
+                    </form>
 
                 </div>
 

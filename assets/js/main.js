@@ -146,7 +146,7 @@ searchBtn.addEventListener("click", () => {
 
 var example_array = {
   ValueA: "Select City",
-  ValueB: "Gulu"
+  ValueB: "Gulu",
 };
 
 var select = document.getElementById("example-select");
@@ -156,6 +156,9 @@ for (index in example_array) {
     index
   );
 }
+$('#example-select > option').each(function(){
+  $(this).addClass("optionbackcolor");
+});
 
 class ResponsiveNav {
   constructor(options) {

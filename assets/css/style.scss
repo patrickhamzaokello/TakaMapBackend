@@ -9,7 +9,7 @@
 
 :root {
   /* ===== Colors ===== */
-  --body-color: #fff;
+  --body-color: #096a23;
   --sidebar-color: #047423;
   --primary-color: #695cfe;
   --primary-color-light: #f6f5ff;
@@ -174,7 +174,7 @@ body.dark .sidebar header .toggle {
 }
 
 .nav-item {
-  .active{
+  .active {
     border-bottom: 1px solid yellow;
   }
 }
@@ -184,8 +184,6 @@ body.dark .sidebar header .toggle {
   .menu {
     a {
       text-decoration: none;
-      
-     
 
       button {
         margin: 10px 0;
@@ -205,6 +203,46 @@ body.dark .sidebar header .toggle {
   }
 }
 
+.optionbackcolor {
+  background: #16ff47;
+  color: #000;
+}
+
+.report_page {
+  position: relative;
+  top: 78px;
+  display: -ms-grid;
+  background-color: #096a23;
+
+  .report_form {
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    display: grid;
+    max-width: 416px;
+
+    form {
+      .labeltext {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: smaller;
+      }
+      .inputbox {
+        width: 100%;
+        color: #000000 !important;
+        background: #ebebeb !important;
+        border: none;
+        border: 1px solid #ebebeb;
+        box-sizing: border-box;
+        padding: 18px 20px;
+        margin: 5px 0;
+      }
+    }
+}
+}
 
 .app_feature_section {
   position: relative;
@@ -213,16 +251,16 @@ body.dark .sidebar header .toggle {
   place-content: center;
   height: 90%;
   background-color: #096a23;
+ 
 
-
-  .mobile_feature{
+  .mobile_feature {
     text-align: center;
-    .message{
-      .heading{
+    .message {
+      .heading {
         margin-top: 0.4em;
         color: #fbff00;
       }
-      .subheading{
+      .subheading {
         margin-top: 0.4em;
         color: #ccfff1;
       }
@@ -231,10 +269,10 @@ body.dark .sidebar header .toggle {
         margin-top: 1em;
       }
     }
-  }
-  
-}
 
+    
+  }
+}
 
 .sidebar li.search-box {
   border-radius: 6px;
