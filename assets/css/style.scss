@@ -214,6 +214,22 @@ body.dark .sidebar header .toggle {
   display: -ms-grid;
   background-color: #096a23;
 
+  .case_container{
+    padding: 4em;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    justify-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+
+    .case_card{
+      padding: 1em 0;
+    }
+  }
+
   .report_form {
     margin: 0 auto;
     place-content: center;
@@ -221,6 +237,14 @@ body.dark .sidebar header .toggle {
     justify-content: center;
     padding: 20px;
     display: grid;
+
+
+    .mk_heading {
+      text-align: center;
+      padding: 1em;
+      color: whitesmoke;
+      text-transform: uppercase;
+    }
 
     form {
       display: grid;

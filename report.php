@@ -94,6 +94,8 @@ while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
 
                 <div class="report_form">
 
+                <h1 class="mk_heading">Make a Report </h1>
+
                     <form action="" method="post">
 
 
@@ -126,7 +128,7 @@ while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
                         </div>
                         <div class="form_inputgrou">
                             <div class="inputbtton">
-                            <button type="submit" value="Submit">Submit</button>
+                                <button type="submit" value="Submit">Submit</button>
                             </div>
                         </div>
 
@@ -145,40 +147,40 @@ while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
                         ?>
 
 
-                            <div class="product-card" style="color: #fff; font-size: 15px;">
+                            <div class="case_card" style="color: #fff; font-size: 15px;">
                                 <div class="infras_card">
                                     <div class="case_style">
 
                                         <div class="description">
-                                            <h1 style="color: #228765; font-size: 22px;"><?= $infra['title'] ?></h1>
-                                            <p style="color:#36CC7C ">
-                                                <?= $infra['name'] ?>, <?= $infra['location'] ?>
+                                            <h1 style="color: #b8f7b7;font-size: 15px;margin-bottom: 0.5em;text-transform: uppercase;"><?= $infra['title'] ?></h1>
+                                            <p style="color:#94ff07 ">
+                                                <?= $infra['name'] ?>, <span style="color: #fff;"><?= $infra['location'] ?></span>
                                             </p>
-                                            <p style="color: #0f3c2d;"><?= $infra['description'] ?></p>
+                                            <p style="color: #8cffa4; margin-top: 0.5em;"><?= $infra['description'] ?></p>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <?php endforeach ?>
+
 
                     </div>
 
-                <?php endforeach ?>
+                <?php else : ?>
+                    <div class="me" style="display: grid; place-content:center; text-align:center; color:#fff;">
+                        No Case Submitted
+
+                    </div>
+                <?php endif ?>
+
 
             </div>
 
 
-        <?php else : ?>
-            <div class="me" style="display: grid; place-content:center; text-align:center; color:#fff;">
-                No Case Submitted
-
-            </div>
-        <?php endif ?>
-
         </div>
 
 
-        </div>
     </section>
 
 
