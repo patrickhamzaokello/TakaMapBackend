@@ -94,8 +94,20 @@ while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
 
                 <div class="report_form">
 
-                <h1 class="mk_heading">Make a Report </h1>
+                    <h1 class="mk_heading">Make a Report </h1>
 
+                    <p id="error"></p>
+                    <div class="form_error_div"></div>
+
+                    <!--        loader-->
+                    <div class="loaderdiv">
+                        <div class="loader-container">
+                            <div class="lds-ripple">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
                     <form action="" method="post">
 
 
@@ -182,7 +194,7 @@ while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
 
     </section>
 
-
+    <script src="assets/js/reportProcess.js"></script>
 
 </body>
 
