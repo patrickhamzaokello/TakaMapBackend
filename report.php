@@ -150,7 +150,6 @@ while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
                             <div class="case_card" style="color: #fff; font-size: 15px;">
                                 <div class="infras_card">
                                     <div class="case_style">
-
                                         <div class="description">
                                             <h1 style="color: #b8f7b7;font-size: 15px;margin-bottom: 0.5em;text-transform: uppercase;"><?= $infra['title'] ?></h1>
                                             <p style="color:#94ff07 ">
