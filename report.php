@@ -4,10 +4,11 @@ require("admin/config.php");
 $db = new Database();
 $con = $db->getConnString();
 
-
-$sql = "SELECT infrastructuretypes.id,infrastructuretypes.name,infrastructuretypes.iconpath,infrastructuretypes.created_at, COUNT(infrastructure.id) AS total_ins FROM infrastructure INNER JOIN infrastructuretypes ON infrastructure.type = infrastructuretypes.id GROUP BY type ORDER BY name ASC";
-$all_categories = mysqli_query($con, $sql);
-
+$cases_requests = array();
+$cases_new= mysqli_query($con, "SELECT * FROM cases WHERE  status = 1 ORDER BY  `cases`.`id` DESC LIMIT 8");
+while ($row = mysqli_fetch_array($cases_new,MYSQLI_ASSOC)) {
+    array_push($cases_requests, $row);
+}
 
 ?>
 
@@ -115,6 +116,47 @@ $all_categories = mysqli_query($con, $sql);
                     </form>
 
                 </div>
+
+
+                <?php if ($cases_requests) : ?>
+
+                    <div class="case_container">
+
+
+                        <?php
+                        foreach ($cases_requests as $infra) :
+                            ?>
+
+
+                            <div class="product-card" style="color: #fff; font-size: 15px;">
+                                <div class="infras_card">
+                                    <div class="case_style">
+
+                                        <div class="description">
+                                            <h1 style="color: #228765; font-size: 22px;"><?= $infra['title']?></h1>
+                                            <p style="color:#36CC7C ">
+                                                <?= $infra['name'] ?>, <?= $infra['location'] ?>
+                                            </p>
+                                            <p style="color: #0f3c2d;"><?= $infra['description'] ?></p>
+
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        <?php endforeach ?>
+
+                    </div>
+
+
+                <?php else : ?>
+                    <div class="me" style="display: grid; place-content:center; text-align:center; color:#fff;">
+                        No Case Submitted
+
+                    </div>
+                <?php endif ?>
 
             </div>
 
