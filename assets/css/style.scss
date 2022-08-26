@@ -221,27 +221,47 @@ body.dark .sidebar header .toggle {
     justify-content: center;
     padding: 20px;
     display: grid;
-    max-width: 416px;
 
     form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // grid-auto-rows: minmax(100px, auto);
+      grid-gap: 1em;
+      justify-items: stretch;
+      align-items: stretch;
+
+      .form_inputgrou {
+        .inputbtton {
+          button {
+            padding: 15px 20px;
+            width: 100%;
+            outline: none;
+            background: yellow;
+            border: none;
+          }
+        }
+      }
       .labeltext {
         margin: 0;
         padding: 0;
-        color: #fff;
+        color: rgb(211, 254, 255);
         font-size: smaller;
       }
       .inputbox {
         width: 100%;
-        color: #000000 !important;
-        background: #ebebeb !important;
+        color: #aaffb4 !important;
+        background: #035419 !important;
         border: none;
-        border: 1px solid #ebebeb;
+        border: 1px solid #aaffb4;
         box-sizing: border-box;
         padding: 18px 20px;
-        margin: 5px 0;
+      }
+      .inputbox::placeholder{
+          color: #b4ff00;
+          font-size: 1em;
       }
     }
-}
+  }
 }
 
 .app_feature_section {
@@ -251,7 +271,6 @@ body.dark .sidebar header .toggle {
   place-content: center;
   height: 90%;
   background-color: #096a23;
- 
 
   .mobile_feature {
     text-align: center;
@@ -269,8 +288,6 @@ body.dark .sidebar header .toggle {
         margin-top: 1em;
       }
     }
-
-    
   }
 }
 

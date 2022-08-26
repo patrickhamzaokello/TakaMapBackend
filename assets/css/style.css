@@ -265,26 +265,64 @@ body.dark .sidebar header .toggle {
   padding: 20px;
   display: -ms-grid;
   display: grid;
-  max-width: 416px;
+}
+
+.report_page .report_form form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  justify-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.report_page .report_form form .form_inputgrou .inputbtton button {
+  padding: 15px 20px;
+  width: 100%;
+  outline: none;
+  background: yellow;
+  border: none;
 }
 
 .report_page .report_form form .labeltext {
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: #d3feff;
   font-size: smaller;
 }
 
 .report_page .report_form form .inputbox {
   width: 100%;
-  color: #000000 !important;
-  background: #ebebeb !important;
+  color: #aaffb4 !important;
+  background: #035419 !important;
   border: none;
-  border: 1px solid #ebebeb;
+  border: 1px solid #aaffb4;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 18px 20px;
-  margin: 5px 0;
+}
+
+.report_page .report_form form .inputbox::-webkit-input-placeholder {
+  color: #b4ff00;
+  font-size: 1em;
+}
+
+.report_page .report_form form .inputbox:-ms-input-placeholder {
+  color: #b4ff00;
+  font-size: 1em;
+}
+
+.report_page .report_form form .inputbox::-ms-input-placeholder {
+  color: #b4ff00;
+  font-size: 1em;
+}
+
+.report_page .report_form form .inputbox::placeholder {
+  color: #b4ff00;
+  font-size: 1em;
 }
 
 .app_feature_section {

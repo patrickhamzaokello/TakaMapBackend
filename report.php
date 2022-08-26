@@ -5,8 +5,8 @@ $db = new Database();
 $con = $db->getConnString();
 
 $cases_requests = array();
-$cases_new= mysqli_query($con, "SELECT * FROM cases WHERE  status = 1 ORDER BY  `cases`.`id` DESC LIMIT 8");
-while ($row = mysqli_fetch_array($cases_new,MYSQLI_ASSOC)) {
+$cases_new = mysqli_query($con, "SELECT * FROM cases WHERE  status = 1 ORDER BY  `cases`.`id` DESC LIMIT 8");
+while ($row = mysqli_fetch_array($cases_new, MYSQLI_ASSOC)) {
     array_push($cases_requests, $row);
 }
 
@@ -96,22 +96,39 @@ while ($row = mysqli_fetch_array($cases_new,MYSQLI_ASSOC)) {
 
                     <form action="" method="post">
 
-                        <label for="Name" class="labeltext">Name</label>
-                        <input id="Name" style="margin-bottom: 2em;" type="text" name="Name" class="inputbox" placeholder="Name" required />
-                        
-                        <label for="Contact" class="labeltext">Contact</label>
-                        <input id="Contact" style="margin-bottom: 2em;" type="text" name="Contact" class="inputbox" placeholder="Email / Phone no" required />
-                        
-                        <label for="Address" class="labeltext">Address</label>
-                        <input id="Address" style="margin-bottom: 2em;" type="address" name="user_address" class="inputbox" placeholder="Address" required />
 
-                        <label for="Title" class="labeltext">Title</label>
-                        <input id="Title" style="margin-bottom: 2em;" type="text" name="case_title" class="inputbox" placeholder="Report Title" required />
-                          
-                        <label for="Description" class="labeltext">Description</label>
-                        <textarea id="Description" style="margin-bottom: 2em;" type="text" name="case_description" class="inputbox" placeholder="Report Description" required></textarea>
+                        <div class="form_inputgrou">
+                            <label for="Name" class="labeltext">Name</label>
+                            <input id="Name" type="text" name="Name" class="inputbox" placeholder="Name" required />
 
-                        <input class="inputsubmit" type="submit" value="Submit" /><br />
+                        </div>
+                        <div class="form_inputgrou">
+                            <label for="Contact" class="labeltext">Contact</label>
+                            <input id="Contact" type="text" name="Contact" class="inputbox" placeholder="Email / Phone no" required />
+                        </div>
+
+                        <div class="form_inputgrou">
+                            <label for="Title" class="labeltext">Title</label>
+                            <input id="Title" type="text" name="case_title" class="inputbox" placeholder="Report Title" required />
+
+                        </div>
+
+                        <div class="form_inputgrou">
+                            <label for="Address" class="labeltext">Address</label>
+                            <input id="Address" type="address" name="user_address" class="inputbox" placeholder="Address" required />
+
+                        </div>
+
+
+                        <div class="form_inputgrou">
+                            <textarea id="Description" rows="4" cols="50" type="text" name="case_description" class="inputbox" placeholder="Report Description" required></textarea>
+
+                        </div>
+                        <div class="form_inputgrou">
+                            <div class="inputbtton">
+                            <button type="submit" value="Submit">Submit</button>
+                            </div>
+                        </div>
 
                     </form>
 
@@ -125,7 +142,7 @@ while ($row = mysqli_fetch_array($cases_new,MYSQLI_ASSOC)) {
 
                         <?php
                         foreach ($cases_requests as $infra) :
-                            ?>
+                        ?>
 
 
                             <div class="product-card" style="color: #fff; font-size: 15px;">
@@ -133,7 +150,7 @@ while ($row = mysqli_fetch_array($cases_new,MYSQLI_ASSOC)) {
                                     <div class="case_style">
 
                                         <div class="description">
-                                            <h1 style="color: #228765; font-size: 22px;"><?= $infra['title']?></h1>
+                                            <h1 style="color: #228765; font-size: 22px;"><?= $infra['title'] ?></h1>
                                             <p style="color:#36CC7C ">
                                                 <?= $infra['name'] ?>, <?= $infra['location'] ?>
                                             </p>
@@ -141,24 +158,24 @@ while ($row = mysqli_fetch_array($cases_new,MYSQLI_ASSOC)) {
 
                                         </div>
                                     </div>
-                                    </div>
                                 </div>
-
                             </div>
 
-                        <?php endforeach ?>
-
                     </div>
 
-
-                <?php else : ?>
-                    <div class="me" style="display: grid; place-content:center; text-align:center; color:#fff;">
-                        No Case Submitted
-
-                    </div>
-                <?php endif ?>
+                <?php endforeach ?>
 
             </div>
+
+
+        <?php else : ?>
+            <div class="me" style="display: grid; place-content:center; text-align:center; color:#fff;">
+                No Case Submitted
+
+            </div>
+        <?php endif ?>
+
+        </div>
 
 
         </div>
