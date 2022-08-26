@@ -92,7 +92,7 @@ $(document).ready(function () {
                         loaderdiv.style.display = "none";
                     }, 4000);
 
-                    window.location.href = "report.php";
+                    window.location.href = "report.php ";
                 }
             })
             .catch(console.error);

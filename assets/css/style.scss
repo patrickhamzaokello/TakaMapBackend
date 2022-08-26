@@ -60,7 +60,7 @@ body.dark {
   top: 80px;
   left: 0;
   height: calc(100% - 80px);
-  width: 300px;
+  width: 250px;
   padding: 10px 14px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
@@ -554,9 +554,9 @@ body.dark .switch::before {
 .home {
   position: absolute;
   top: 80px;
-  left: 300px;
+  left: 250px;
   height: calc(100vh - 80px);
-  width: calc(100% - 300px);
+  width: calc(100% - 250px);
   background-color: var(--body-color);
   transition: var(--tran-05);
   overflow: hidden;
