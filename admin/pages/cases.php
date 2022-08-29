@@ -140,7 +140,7 @@ require "../queries/classes/User.php";
                                 <div class="product-card" style="color: #fff; font-size: 15px;">
                                     <div class="infras_card">
                                         <div class="case_style">
-                                            <img class="case_image" src="../../mobile/api/v1/Requests/mobile_uploads/<?= $infras->getImagepath() ?>" />
+                                            <img class="case_image" style="<?= ($infras->getImagepath() ? '' : 'display:none') ?>" src="../../mobile/api/v1/Requests/mobile_uploads/<?= $infras->getImagepath() ?>" />
 
                                             <div class="description">
                                                 <h1 style="color: #228765; font-size: 22px;"><?= $infras->getTitle() ?></h1>

@@ -62,10 +62,10 @@ $all_categories = mysqli_query($con, $sql);
                 </li>
             </ul>
             <ul class="right-content">
-                <li class="nav-item">
+                <li style="display: none" class="nav-item">
                     <a class="nav-link" href="admin/index" target="_blank">Admin</a>
                 </li>
-                <li class="nav-item">
+                <li style="display: none" class="nav-item">
                     <a class="nav-link registration" href="#">Logout</a>
                 </li>
             </ul>
