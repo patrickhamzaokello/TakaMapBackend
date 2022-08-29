@@ -75,28 +75,28 @@ $all_categories = mysqli_query($con, $sql);
 
                                      <li class="nav-link">
                         <a href="infrastructure_types">
-                            <i class='bx bx-bell  icon'></i>
+                            <i class='bx bx-candles  icon'></i>
                             <span class="text nav-text">Type</span>
                         </a>
                     </li>
 
                     <li class="nav-link active">
                         <a href="manage">
-                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <i class='bx bx-cabinet icon'></i>
                             <span class="text nav-text">Manage</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="pickup">
-                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <i class='bx bx-trash-alt icon'></i>
                             <span class="text nav-text">Pickups</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="cases">
-                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <i class='bx bx-user-voice icon'></i>
                             <span class="text nav-text">Cases</span>
                         </a>
                     </li>
