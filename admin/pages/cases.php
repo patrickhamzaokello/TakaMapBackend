@@ -145,7 +145,7 @@ require "../queries/classes/User.php";
                                             <div class="description">
                                                 <h1 style="color: #228765; font-size: 22px;"><?= $infras->getTitle() ?></h1>
                                                 <p style="color:#36CC7C ">
-                                                    <?= $infras->getUser()->getFullname() ?>, <?= $infras->getDateCreated() ?>
+                                                    <?= $infras->getUser() ?>, <?= $infras->getDateCreated() ?>
                                                 </p>
                                                 <p style="color: #0f3c2d;"><?= $infras->getDescription() ?></p>
 

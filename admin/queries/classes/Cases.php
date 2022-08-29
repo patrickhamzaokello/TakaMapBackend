@@ -5,6 +5,7 @@ class Cases
     private $TABLE_NAME = "cases";
     private $con;
     private $id;
+    private $name;
     private $userid;
     private $title;
     private $description;
@@ -21,7 +22,7 @@ class Cases
         $this->con = $con;
         $this->id = $id;
 
-        $query = mysqli_query($this->con, "SELECT  `id`, `userid`, `title`, `description`, `imagepath`, `status`, `date_created` FROM ". $this->TABLE_NAME ." WHERE id ='$this->id'");
+        $query = mysqli_query($this->con, "SELECT  `id`, `userid`, `title`,`name`, `description`, `imagepath`, `status`, `date_created` FROM ". $this->TABLE_NAME ." WHERE id ='$this->id'");
         $cases_fetched = mysqli_fetch_array($query);
 
 
@@ -30,6 +31,7 @@ class Cases
             $this->id = null;
             $this->userid = null;
             $this->title = null;
+            $this->name = null;
             $this->description = null;
             $this->imagepath = null;
             $this->status = null;
@@ -39,6 +41,7 @@ class Cases
             $this->id = $cases_fetched['id'];
             $this->userid = $cases_fetched['userid'];
             $this->title = $cases_fetched['title'];
+            $this->name = $cases_fetched['name'];
             $this->description = $cases_fetched['description'];
             $this->imagepath = $cases_fetched['imagepath'];
             $this->status = $cases_fetched['status'];
@@ -63,7 +66,12 @@ class Cases
     }
 
     public function getUser(){
-        return new User($this->con, $this->userid);
+        if($this->userid < 1){
+            return $this->name;
+        } else {
+            $user =  new User($this->con, $this->userid);
+            return $user->getFullname();
+        }
     }
 
     /**
